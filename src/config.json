@@ -1,0 +1,19 @@
+{
+    "http": {
+        "port": 3003
+    },
+
+    "resourcePatterns": [
+        "docs/*.md",
+        "src/client/apps/*/index.{js,ts}",
+        "src/client/apps/code/*/index.{js,ts}",
+        "src/client/apps/exercise/*/index.{js,ts}"
+    ],
+
+    "labels": {
+        "apps": "Vue Class",
+        "docs": "Documentation",
+        "code": "Code examples",
+        "exercise": "Exercises"
+    }
+}

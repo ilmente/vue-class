@@ -8,20 +8,20 @@ function renderInitialState(initialState) {
     };</script>`;
 }
 
-module.exports = ({ title, path, initialState }) => `
+module.exports = ({ title, base, initialState }) => `
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <meta name="generator" content="hand made" />
-        <link rel="stylesheet" type="text/css" href="${path}/style.css"> 
+        <link rel="stylesheet" type="text/css" href="${base}/style.css"> 
         <title>${title}</title>
     </head>
     <body>
         <div id="app"></div>
         ${renderInitialState(initialState)}
-        <script src="${path}/app.js"></script>
+        <script src="${base}/app.js"></script>
     </body>
 </html>
 `
