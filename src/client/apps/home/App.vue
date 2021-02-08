@@ -25,7 +25,7 @@
 
             ```
             yarn build --watch      # watch for client code changes
-            yarn server             # spin the server
+            yarn serve              # spin the server
             ```
 
             And follow the instructions in the exercise description page.
