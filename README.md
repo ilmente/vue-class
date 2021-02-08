@@ -38,6 +38,9 @@ yarn build
 # or watch for changes in the code
 yarn build --watch
 
-# run the server
+# run the server with code watchers
 yarn serve
+
+# generatic a static website
+yarn generate
 ```
