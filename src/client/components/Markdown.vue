@@ -19,7 +19,7 @@
 
 <script lang="ts">
     import Vue from 'vue';
-    import snarkdown from 'snarkdown';
+    import marked from 'marked';
     import { sanitize } from 'dompurify';
 
     export default Vue.extend({
@@ -43,7 +43,7 @@
                 }
 
                 const trimmedMarkdown = this.deepTrim(markdown);
-                const html = snarkdown(trimmedMarkdown);
+                const html = marked(trimmedMarkdown);
                 
                 this.html = sanitize(html);
             },

@@ -1,25 +1,37 @@
 <template>
     <Layout>
-        <DataBinding my-name="Alex" my-surname="Bellini" data-qa="hello!">
+        <DataBindingAndTemplating someText="This text comes froma prop!">
             <template #top>
-                <h1>HellO!</h1>
+                <p>
+                    <em>This content is injected in the #top slot</em>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
             </template>
 
-            <template #default="data">
-                <h1>{{ data.data }}</h1>
+            <template #default="{ text }">
+                <p>
+                    Scoped slot: <strong>{{ text }}</strong>
+                    <br>
+                    <em>This content is injected in the #default slot</em>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
             </template>
-        </DataBinding>
+        </DataBindingAndTemplating>
     </Layout>
 </template>
 
 <script>
     import Layout from 'components/Layout';
-    import DataBinding from './DataBinding';
+    import DataBindingAndTemplating from './DataBindingAndTemplating';
 
     export default {
         components: {
             Layout,
-            DataBinding
+            DataBindingAndTemplating
         }
     }
 </script>

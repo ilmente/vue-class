@@ -1,0 +1,13 @@
+{
+    "verbose": false,
+    "ext": "js,json,md",
+    "watch": [
+        "docs",
+        "src/server",
+        "src/resources"
+    ],
+    "ignore": [
+        "*.ts",
+        "*.vue"
+    ]
+}

@@ -65,9 +65,10 @@
             <div class="content has-text-centered">
                 <h6>🖥 Vue Class</h6>
                 <p>
-                    This <a href="https://github.com/ilmente/vue-class">project</a> is maintained with ❤️ by <a href="https://ilmente.com">ilmente</a> 
+                    This <a href="https://github.com/ilmente/vue-class" target="_blank">project</a> 
+                    is maintained with ❤️ by <a href="https://ilmente.com" target="_blank">ilmente</a> 
                     <br>
-                    <a href="https://github.com/ilmente/vue-class/blob/master/LICENSE">MIT licence</a>
+                    <a href="https://github.com/ilmente/vue-class/blob/master/LICENSE" target="_blank">MIT</a> license
                 </p>
             </div>
         </footer>

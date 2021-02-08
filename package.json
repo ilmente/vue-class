@@ -7,8 +7,8 @@
   },
   "scripts": {
     "build": "webpack --config ./src/build/webpack.config.js",
-    "serve": "node ./src/server",
-    "start": "yarn run build && yarn run serve"
+    "serve": "nodemon ./src/server",
+    "start": "webpack --config ./src/build/webpack.config.js && node ./src/server"
   },
   "dependencies": {
     "@marp-team/marp-core": "~1.4.0",
@@ -17,16 +17,18 @@
     "express": "~4.17.1",
     "fast-glob": "~3.2.5",
     "lodash": "~4.17.20",
-    "snarkdown": "~2.0.0",
+    "marked": "~2.0.0",
     "vue": "~2.6.12"
   },
   "devDependencies": {
     "@babel/core": "~7.12.13",
     "@types/dompurify": "~2.2.1",
     "@types/lodash": "~4.14.168",
+    "@types/marked": "~1.2.2",
     "babel-loader": "~8.2.2",
     "css-loader": "~5.0.1",
     "mini-css-extract-plugin": "~1.3.5",
+    "nodemon": "~2.0.7",
     "sass": "~1.32.6",
     "sass-loader": "~10.1.1",
     "ts-loader": "~8.0.15",

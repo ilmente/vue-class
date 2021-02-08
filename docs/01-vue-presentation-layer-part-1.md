@@ -105,7 +105,7 @@ What the...? What are these things?
 
 ---
 
-# SFC (Single File Component)
+# SFC (Single File Component) [[docs]](https://vuejs.org/v2/guide/single-file-components.html)
 
 ### `<template>`
 
@@ -119,6 +119,68 @@ What the...? What are these things?
 ### `<script>`
 
 - contains javascript (or typescript) behavioural implementation
+
+---
+
+# The `data` property [[docs]](https://vuejs.org/v2/guide/reactivity.html)
+
+- use this function to return reactive variables
+
+---
+
+# The `computed` property [[docs]](https://vuejs.org/v2/guide/computed.html)
+
+- good for display values (or manipulations of them)
+- leverage a clever caching system
+- avoid massive logic into computed variables
+
+---
+
+# The `method` property [[docs]](https://vuejs.org/v2/guide/computed.html#Computed-Caching-vs-Methods)
+
+- good for actions, helpers and handlers
+- do not have caching
+
+---
+
+# The `props` property [[docs]](https://vuejs.org/v2/guide/components-props.html)
+
+- define initial props you can pass to the component from the outside
+in the form of html5 attributes
+- you can define type, defaylt value, required contraint and custom validation for each of them
+
+---
+
+![bg fit left](./assets/lifecycle.png)
+
+# Lifecycle methods
+
+- [Vue lifecycle docs](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram)
+
+---
+
+# Directives 
+
+- conditional rendering: `v-if=`, `v-show=`
+- loops: `v-for=`
+- data binding: `v-bind= / v-bind:attr= / :bind= / :attr=`, `v-model=` 
+- events: `v-on:event= / @event=`
+
+---
+
+# Slots [[docs]](https://vuejs.org/v2/guide/components-slots.html)
+
+- inject content in a component from outside out
+- you can have as many slots as you want
+    - default slot 
+        - definition: `<slot>Default content</slot>`
+        - use: `<template></template>`
+    - custom slot 
+        - definition: `<slot name="custom">Default content</slot>`
+        - use: `<template #custom></template>`
+- pass data to a slot (scoped)
+    - definition: `<slot :bind="var">Default content</slot>`
+    - use: `<template #default="{var}">{{var}}</template>`
 
 ---
 
