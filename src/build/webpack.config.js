@@ -2,6 +2,7 @@ const { join } = require('path');
 
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const tsConfig = require('./tsConfig');
 const { entries } = require('../resources');
 
@@ -83,6 +84,12 @@ module.exports = () => ({
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name]/style.css'
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: 'src/assets', to: 'assets' },
+                { from: 'docs/assets', to: 'docs/assets' },
+            ],
         }),
     ]
 });
