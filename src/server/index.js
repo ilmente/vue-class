@@ -56,6 +56,7 @@ app.use((err, req, res, next) => {
 });
 
 app.use(express.static('public'));
+app.use('/assets', express.static('src/assets'));
 app.use('/docs/assets', express.static('docs/assets'));
 
 app.listen(

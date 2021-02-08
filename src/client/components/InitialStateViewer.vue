@@ -1,8 +1,24 @@
 <template>
-    <div class="content">
-        <h3>InitialState</h3>
-        <pre><code>{{ initialState }}</code></pre>
-    </div>
+    <section class="my-5 content box">
+        <h3 class="my-0">
+            Initial state
+            <button 
+                class="button is-small is-primary is-pulled-right"
+                @click="onClick">
+                {{actionLabel}}
+            </button>
+        </h3>
+        <div class="mt-3" v-show="isVisible">
+            <p>
+                You can access the initial state (data) as follows:
+            </p>
+            <pre><code>window.__INITIAL_STATE__</code></pre>
+            <p>
+                Available data:
+            </p>
+            <pre><code>{{ initialState }}</code></pre>
+        </div>
+    </section>
 </template>
 
 <script lang="ts">
@@ -16,12 +32,24 @@
             } as PropOptions<boolean>,
         },
 
+        data() {
+            return {
+                isVisible: false
+            }
+        },
+
         computed: {
+            actionLabel(): string {
+                if (this.isVisible) {
+                    return 'Hide';
+                }
+
+                return 'Show';
+            },
+
             initialState(): string {
                 const initialState = window.__INITIAL_STATE__ || {};
                 const initialStateCopy: any = { ...initialState };
-                
-                console.info('InitialState', initialState);
 
                 if (!this.showNavigation) {
                     initialStateCopy.navigation = '...';
@@ -30,5 +58,11 @@
                 return JSON.stringify(initialStateCopy, null, 4);
             }
         },
+
+        methods: {
+            onClick(): void {
+                this.isVisible = !this.isVisible;
+            }
+        }
     })
 </script>

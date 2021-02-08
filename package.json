@@ -1,9 +1,14 @@
 {
+  "private": true,
   "name": "vue-class",
+  "author": {
+    "name": "Alessandro Bellini",
+    "url": "https://ilmente.com"
+  },
   "scripts": {
     "build": "webpack --config ./src/build/webpack.config.js",
     "serve": "node ./src/server",
-    "start": "run build && run serve"
+    "start": "yarn run build && yarn run serve"
   },
   "dependencies": {
     "@marp-team/marp-core": "~1.4.0",

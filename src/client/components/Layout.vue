@@ -56,20 +56,18 @@
         </section>
 
         <main class="container is-max-desktop">
-            <div class="my-5">
+            <div class="my-5 content">
                 <slot v-bind="item"></slot>
             </div>
         </main>
 
         <footer class="footer">
             <div class="content has-text-centered">
-                <h6>Vue Class</h6>
+                <h6>🖥 Vue Class</h6>
                 <p>
-                    The project is maintained on 
-                    <a href="https://github.com/ilmente/vue-class">github.com/ilmente/vue-class</a>
+                    This <a href="https://github.com/ilmente/vue-class">project</a> is maintained with ❤️ by <a href="https://ilmente.com">ilmente</a> 
                     <br>
-                    and available under 
-                    <a href="https://github.com/ilmente/vue-class/blob/master/LICENSE">MIT licence</a>.
+                    <a href="https://github.com/ilmente/vue-class/blob/master/LICENSE">MIT licence</a>
                 </p>
             </div>
         </footer>
@@ -77,16 +75,13 @@
 </template>
 
 <style lang="scss">
-    @import 'bulma/sass/utilities/_all.sass';
-    /** 
-     * custom vars here
-     */
+    @import 'variables';
     @import 'bulma';
 </style>
 
 <script lang="ts">
     import Vue from 'vue';
-    import Logo from 'components/Logo.vue';
+    import Logo from 'components/Logo';
     import { NavigationItem } from 'typings/Navigation';
 
     export default Vue.extend({

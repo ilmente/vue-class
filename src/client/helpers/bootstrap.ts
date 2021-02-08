@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import Layout from 'components/Layout.vue';
-import Markdown from 'components/Markdown.vue';
-import InitialStateViewer from 'components/InitialStateViewer.vue';
+import Layout from 'components/Layout';
+import Markdown from 'components/Markdown';
+import InitialStateViewer from 'components/InitialStateViewer';
 
 Vue.component('Layout', Layout);
 Vue.component('Markdown', Markdown);
