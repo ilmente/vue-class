@@ -13,8 +13,8 @@
 </template>
 
 <script>
-    import Layout from '@components/Layout.vue';
-    import DataBinding from './DataBinding.vue';
+    import Layout from 'components/Layout';
+    import DataBinding from './DataBinding';
 
     export default {
         components: {

@@ -3,6 +3,7 @@ const { join } = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const tsConfig = require('./tsConfig');
+const { entries } = require('../resources');
 
 const root = process.cwd();
 
@@ -19,11 +20,7 @@ module.exports = () => ({
         entrypoints: false,
     },
 
-    entry: {
-        home: join(root, 'src/client/apps/home/index.ts'),
-        'code/01': join(root, 'src/client/apps/code/01/index.js'),
-        'code/02': join(root, 'src/client/apps/code/02/index.ts'),
-    },
+    entry: entries,
 
     output: {
         publicPath: '/',
@@ -70,6 +67,11 @@ module.exports = () => ({
                         loader: 'sass-loader',
                         options: {
                             implementation: require('sass'),
+                            sassOptions: {
+                                includePaths: [
+                                    join(root, 'src/client/styles'),
+                                ],
+                            },
                         },
                     },
                 ],

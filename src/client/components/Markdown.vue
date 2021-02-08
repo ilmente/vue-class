@@ -1,9 +1,21 @@
 <template>
-    <div>                   
+    <div class="markdown">                   
         <div ref="markdown" style="display:none;"><slot/></div>
-        <section class="content" v-html="html"></section>
+        <section class="markdown__content content" v-html="html"></section>
     </div>
 </template>
+
+<style lang="scss">
+    @import 'variables';
+
+    .markdown {
+        &__content > img {
+            padding: 3rem;
+            margin: 1rem 0;
+            border: 1px solid $grey-lightest;
+        }
+    }
+</style>
 
 <script lang="ts">
     import Vue from 'vue';

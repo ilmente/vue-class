@@ -20,14 +20,15 @@
             "dom"
         ],
         "paths": {
-            "@src/": ["src/*"],
-            "@components/*": ["src/client/shared/components/*"],
-            "@helpers/*": ["src/client/shared/helpers/*"],
-            "@typings/*": ["src/client/shared/typings/*"]
+            "src/": ["src/*"],
+            "components/*": ["src/client/components/*"],
+            "helpers/*": ["src/client/helpers/*"],
+            "typings/*": ["src/client/typings/*"]
         }
     },
     "files": [
-        "src/client/global.d.ts"
+        "src/client/global.d.ts",
+        "src/client/shim.d.ts"
     ],
     "include": [
         "src/client/**/*.ts",
