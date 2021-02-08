@@ -53,7 +53,7 @@ Given an input field binded to a variable...
 
 --- 
 
-![bg fit](./assets/2-way.png)
+![bg fit](/assets/docs/2-way.png)
 
 ---
 
@@ -73,7 +73,7 @@ Given an input field binded to a variable...
 
 --- 
 
-![bg fit](./assets/1-way.png)
+![bg fit](/assets/docs/1-way.png)
 
 ---
 
@@ -86,7 +86,7 @@ Given an input field binded to a variable...
 
 --- 
 
-![bg left](./assets/code.jpg)
+![bg left](/assets/docs/code.jpg)
 
 # Code time
 
@@ -151,7 +151,7 @@ in the form of html5 attributes
 
 ---
 
-![bg fit left](./assets/lifecycle.png)
+![bg fit left](/assets/docs/lifecycle.png)
 
 # Lifecycle methods
 
