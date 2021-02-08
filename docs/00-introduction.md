@@ -12,7 +12,7 @@ Fabbrica di Lampadine - Yakkyo
 
 ---
 
-![bg left](./assets/ilmente.jpg)
+![bg left](/assets/docs/ilmente.jpg)
 
 # Alessandro Bellini
 

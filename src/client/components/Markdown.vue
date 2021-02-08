@@ -9,7 +9,7 @@
     @import 'variables';
 
     .markdown {
-        &__content > img {
+        &__content img {
             padding: 3rem;
             margin: 1rem 0;
             border: 1px solid $grey-lightest;
