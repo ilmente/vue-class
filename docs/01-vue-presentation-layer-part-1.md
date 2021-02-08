@@ -172,10 +172,15 @@ in the form of html5 attributes
 
 - inject content in a component from outside out
 - you can have as many slots as you want
-    - default slot `<slot></slot>`
-    - custom slot `<slot name="custom"></slot>`
+    - default slot 
+        - definition: `<slot>Default content</slot>`
+        - use: `<template></template>`
+    - custom slot 
+        - definition: `<slot name="custom">Default content</slot>`
+        - use: `<template #custom></template>`
 - pass data to a slot (scoped)
-    - `<slot :bind="var"></slot>`
+    - definition: `<slot :bind="var">Default content</slot>`
+    - use: `<template #default="{var}">{{var}}</template>`
 
 ---
 
