@@ -1,14 +1,17 @@
 <template>
     <section class="my-5 content box">
         <h3 class="my-0">
-            Initial state
+            Data viewer
             <button 
                 class="button is-small is-primary is-pulled-right"
                 @click="onClick">
                 {{actionLabel}}
             </button>
         </h3>
+        You can find the code for this exercise in <code>{{ location }}</code>
+
         <div class="mt-3" v-show="isVisible">
+            <hr>
             <p>
                 You can access the initial state (data) as follows:
             </p>
@@ -56,7 +59,11 @@
                 }
 
                 return JSON.stringify(initialStateCopy, null, 4);
-            }
+            },
+
+            location(): string {
+                return `/src/client${window.__INITIAL_STATE__.navigation.current.url}`
+            },
         },
 
         methods: {

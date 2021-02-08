@@ -1,5 +1,7 @@
 <template>
     <Layout>
+        <DataViewer />
+        
         <Markdown>
             # Todo
 
@@ -41,21 +43,19 @@
             ![](/assets/exercise/01-1.png)
             ![](/assets/exercise/01-2.png)
         </Markdown>
-
-        <InitialStateViewer />
     </Layout>
 </template>
 
 <script>
     import Layout from 'components/Layout';
     import Markdown from 'components/Markdown';
-    import InitialStateViewer from 'components/InitialStateViewer';
+    import DataViewer from 'components/DataViewer';
 
     export default {
         components: {
             Layout,
             Markdown,
-            InitialStateViewer,
+            DataViewer,
         },
     }
 </script>
