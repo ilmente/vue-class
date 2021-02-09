@@ -47,9 +47,9 @@
 </template>
 
 <script>
-    import Layout from 'components/Layout';
-    import Markdown from 'components/Markdown';
-    import DataViewer from 'components/DataViewer';
+    import Layout from 'components/Layout.vue';
+    import Markdown from 'components/Markdown.vue';
+    import DataViewer from 'components/DataViewer.vue';
 
     export default {
         components: {

@@ -2,8 +2,6 @@
 marp: true
 paginate: true
 theme: default
-class:
-    - lead
 ---
 
 # Vue Presentation Layer, part 1: introduction

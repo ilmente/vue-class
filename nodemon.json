@@ -4,7 +4,8 @@
     "watch": [
         "docs",
         "src/server",
-        "src/resources"
+        "src/resources",
+        "src/client/**/@meta.json"
     ],
     "ignore": [
         "*.ts",

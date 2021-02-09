@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/db69df9f-832b-463e-a9e0-a939f0df08c3/deploy-status)](https://app.netlify.com/sites/vue-class-ilmente/deploys)
+
 # Vue Class
 
 This project contains all the material used for Vue Course.

@@ -15,13 +15,15 @@ module.exports = ({ title, base, initialState }) => `
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <meta name="generator" content="hand made" />
-        <link rel="stylesheet" type="text/css" href="${base}/style.css"> 
+        <link rel="stylesheet" type="text/css" href="${base}.css">
+        <script src="/runtime.js"></script>
         <title>${title}</title>
     </head>
     <body>
         <div id="app"></div>
         ${renderInitialState(initialState)}
-        <script src="${base}/app.js"></script>
+        <script src="/vendors.js"></script>
+        <script src="${base}.js"></script>
     </body>
 </html>
 `
