@@ -51,7 +51,6 @@ function createResource(path) {
         resource.url = '/';
     }
 
-
     if (!isMarkdown) {
         return resource;
     }

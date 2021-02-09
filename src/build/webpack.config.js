@@ -4,6 +4,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const tsConfig = require('./tsConfig');
+const { Module } = require('./Module');
 const { entries } = require('../resources');
 
 const root = process.cwd();
@@ -19,6 +20,9 @@ module.exports = () => ({
         chunkOrigins: false,
         modules: false,
         entrypoints: false,
+        excludeAssets: [
+            (assetName) => /\.map$/.test(assetName),
+        ],
     },
 
     entry: entries,
@@ -26,7 +30,7 @@ module.exports = () => ({
     output: {
         publicPath: '/',
         path: join(root, 'public'),
-        filename: '[name]/app.js',
+        filename: '[name].js',
     },
 
     resolve: {
@@ -80,10 +84,34 @@ module.exports = () => ({
         ]
     },
 
+    optimization: {
+        runtimeChunk: {
+            name: 'runtime',
+        },
+
+        splitChunks: {
+            cacheGroups: {
+                default: false,
+                commons: false,
+
+                vendors: {
+                    name: 'vendors',
+                    chunks: 'initial',
+                    enforce: true,
+                    priority: -10,
+                    test(module) {
+                        const mod = new Module(module);
+                        return mod.contains('node_modules');
+                    },
+                },
+            },
+        },
+    },
+
     plugins: [
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name]/style.css'
+            filename: '[name].css'
         }),
         new CopyPlugin({
             patterns: [

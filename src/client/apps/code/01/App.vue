@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <DataBindingAndTemplating someText="This text comes froma prop!">
+        <DataBindingAndTemplating someText="This text comes from a prop!">
             <template #top>
                 <p>
                     <em>This content is injected in the #top slot</em>
@@ -25,8 +25,8 @@
 </template>
 
 <script>
-    import Layout from 'components/Layout';
-    import DataBindingAndTemplating from './DataBindingAndTemplating';
+    import Layout from 'components/Layout.vue';
+    import DataBindingAndTemplating from './DataBindingAndTemplating.vue';
 
     export default {
         components: {

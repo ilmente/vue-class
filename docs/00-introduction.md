@@ -1,14 +1,12 @@
 ---
 marp: true
 paginate: true
+theme: default
 ---
 
-<!-- theme: default -->
+# Vue Class
 
-# Vuejs Class
-
-Fabbrica di Lampadine - Yakkyo
-*February - March 2021*
+February - March 2021
 
 ---
 

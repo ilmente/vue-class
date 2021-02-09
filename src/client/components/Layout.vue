@@ -56,7 +56,7 @@
         </section>
 
         <main class="container is-max-desktop">
-            <div class="my-5 content">
+            <div class="my-5">
                 <slot v-bind="item"></slot>
             </div>
         </main>
@@ -82,7 +82,7 @@
 
 <script lang="ts">
     import Vue from 'vue';
-    import Logo from 'components/Logo';
+    import Logo from 'components/Logo.vue';
     import { NavigationItem } from 'typings/Navigation';
 
     export default Vue.extend({

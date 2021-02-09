@@ -1,11 +1,4 @@
-import Vue from 'vue';
 import App from './App';
-import { bootstrap } from 'helpers/bootstrap';
+import { simpleBootstrap } from 'helpers/bootstrap';
 
-bootstrap(new Vue({
-    template: '<App />',
-
-    components: {
-        App,
-    }
-}));
+simpleBootstrap(App);

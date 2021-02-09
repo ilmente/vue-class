@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <h1>Data binding and templating</h1>
+        <h1>Same as first example, but in typescript...</h1>
 
         <slot name="top"></slot>
 
@@ -60,6 +60,8 @@
         <slot name="bottom" v-if="isBottomSlotVisible">
             <p>
                 This is the default content for the #bottom slot.
+                Look what happen when you toggle the checkbox in terms 
+                of computed/methods calls...
             </p>
         </slot>
 
@@ -67,62 +69,59 @@
     </div>
 </template>
 
-<script>
-    export default {
+<script lang="ts">
+    import Vue, { PropOptions } from 'vue';
+    import Component, { mixins } from 'vue-class-component';
+    import { LogComputed, LogMethod } from 'decorators/log'
+
+    const SameAsFirstExampleProps = Vue.extend({
         props: {
             someText: {
                 type: String,
-                default() {
+                default(): string {
                     return 'Some text value...';
                 },
-                validator(value) {
+                validator(value: string): boolean {
                     return value.length > 3;
-                }
-            },
-        },
+                },
+            } as PropOptions<string>,
+        }
+    });
 
-        data() {
-            return {
-                oneWayNumber: 0,
-                twoWayText: this.someText,
-                isBottomSlotVisible: true,
-            }
-        },
+    @Component
+    export default class extends mixins(SameAsFirstExampleProps) {
+        oneWayNumber: number = 0;
+        twoWayText: string = this.someText;
+        isBottomSlotVisible: boolean = true;
 
-        computed: {
-            double() {
-                const double = this.oneWayNumber * 2;
-                console.log('computed:', double);
-                return double;
-            },
-        },
-
-        created() {
+        @LogComputed
+        get double(): number {
+            return this.oneWayNumber * 2;
+        }
+        
+        created(): void {
             // look in the console to better understand the difference
             // in lifecycle
             console.log('created');
-        },
+        }
 
-        mounted() {
+        mounted(): void {
             // look in the console to better understand the difference
             // in lifecycle
             console.log('mounted');
-        },
+        }
 
-        methods: {
-            onInput(event) {
-                this.oneWayNumber = event.target.value;
-            },
+        onInput(event: Event): void {
+            const element = event.currentTarget as HTMLInputElement
+            this.oneWayNumber = parseInt(element.value);
+        }
 
-            getReverse() {
-                const reverse = this.twoWayText
-                    .split('')
-                    .reverse()
-                    .join('');
-
-                console.log('method:', reverse);
-                return reverse;
-            },
-        },
+        @LogMethod
+        getReverse(): string {
+            return this.twoWayText
+                .split('')
+                .reverse()
+                .join('');
+        }
     }
 </script>

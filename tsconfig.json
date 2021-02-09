@@ -13,6 +13,7 @@
         "esModuleInterop": true,
         "strictPropertyInitialization": true,
         "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
         "resolveJsonModule": true,
         "lib": [
             "es6",
@@ -23,6 +24,7 @@
             "src/": ["src/*"],
             "components/*": ["src/client/components/*"],
             "helpers/*": ["src/client/helpers/*"],
+            "decorators/*": ["src/client/decorators/*"],
             "typings/*": ["src/client/typings/*"]
         }
     },
