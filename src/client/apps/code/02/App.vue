@@ -2,7 +2,9 @@
     <Layout>
         <Tabs>
             <Tab label="Same as first example" isActive>
-                <SameAsFirstExample someText="This text comes from a prop!">
+                <SameAsFirstExample 
+                    :initialNumber="10" 
+                    initialText="This text comes from a prop!">
                     <template #top>
                         <p>
                             <em>This content is injected in the #top slot</em>
@@ -24,22 +26,32 @@
                     </template>
                 </SameAsFirstExample>
             </Tab>
-            <Tab label="New example">
-                <p>Work in progress...</p>
+            <Tab label="A deeper dive">
+                <DeepDiveParent 
+                    :countdown="countdown" 
+                    @restart-click="onRestartClick" />
             </Tab>
         </Tabs>
     </Layout>
 </template>
 
 <script lang="ts">
-    import Vue from 'vue';
-    import Component from 'vue-class-component';
+    import { Vue, Component } from 'vue-property-decorator';
     import SameAsFirstExample from './SameAsFirstExample.vue';
+    import DeepDiveParent from './DeepDiveParent.vue';
 
     @Component({
         components: {
-            SameAsFirstExample
+            SameAsFirstExample,
+            DeepDiveParent,
         }
     })
-    export default class extends Vue {}
+    export default class extends Vue {
+        countdown: number = 10;
+
+        onRestartClick(): void {
+            const randomNumber = Math.ceil(Math.random() * 10);
+            this.countdown = randomNumber;
+        }
+    }
 </script>

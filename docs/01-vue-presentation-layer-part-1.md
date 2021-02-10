@@ -161,7 +161,7 @@ in the form of html5 attributes
 
 - conditional rendering: `v-if=`, `v-show=`
 - loops: `v-for=`
-- data binding: `v-bind= / v-bind:attr= / :bind= / :attr=`, `v-model=` 
+- data binding: `v-bind= / v-bind:attr= / :attr=`, `v-model=` 
 - events: `v-on:event= / @event=`
 
 ---
@@ -177,7 +177,7 @@ in the form of html5 attributes
         - definition: `<slot name="custom">Default content</slot>`
         - use: `<template #custom></template>`
 - pass data to a slot (scoped)
-    - definition: `<slot :bind="var">Default content</slot>`
+    - definition: `<slot :scopedVar="var">Default content</slot>`
     - use: `<template #default="{var}">{{var}}</template>`
 
 ---

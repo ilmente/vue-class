@@ -8,6 +8,7 @@
                 {{actionLabel}}
             </button>
         </h3>
+        
         You can find the code for this exercise in <code>{{ location }}</code>
 
         <div class="mt-3" v-show="isVisible">
