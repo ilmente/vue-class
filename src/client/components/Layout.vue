@@ -70,6 +70,9 @@
                     <br>
                     <a href="https://github.com/ilmente/vue-class/blob/master/LICENSE" target="_blank">MIT</a> license
                 </p>
+                <small class="has-text-grey-light">
+                    Version {{platform.version}} - Build {{platform.build}}
+                </small>
             </div>
         </footer>
     </div>
@@ -84,6 +87,7 @@
     import Vue from 'vue';
     import Logo from 'components/Logo.vue';
     import { NavigationItem } from 'typings/Navigation';
+    import { Platform } from 'typings/State';
 
     export default Vue.extend({
         components: {
@@ -103,6 +107,10 @@
 
             item(): NavigationItem {
                 return window.__INITIAL_STATE__.navigation.current;
+            },
+
+            platform(): Platform {
+                return window.__INITIAL_STATE__.platform;
             },
 
             menuModifier(): string {
