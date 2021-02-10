@@ -3,15 +3,22 @@
 # Vue Class
 
 This project contains all the material used for Vue Course.
-It's an application providing access both to the documentation (slides)
-and code examples.
+It's an application providing documentation (slides), code examples and exercises.
 
-## Requirements
+## Live website
+
+[vue-class.ilmente.com](https://vue-class.ilmente.com)
+
+## Host it
+
+Run the application on your local machine or on a server of your choice.
+
+### Requirements
 
 - Node 14.x
 - Yarn 1.x
 
-## Setup
+### Setup
 
 ```bash
 # clone the project
@@ -40,9 +47,13 @@ yarn build
 # or watch for changes in the code
 yarn build --watch
 
+# run netlify lambda functions server
+yarn lambda
+
 # run the server with code watchers
+# and proxies the netlify lambda functions server
 yarn serve
 
-# generatic a static website
+# generate a static website
 yarn generate
 ```

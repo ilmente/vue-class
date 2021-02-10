@@ -70,28 +70,26 @@
 </template>
 
 <script lang="ts">
-    import Vue, { PropOptions } from 'vue';
-    import Component, { mixins } from 'vue-class-component';
-    import { LogComputed, LogMethod } from 'decorators/log'
-
-    const SameAsFirstExampleProps = Vue.extend({
-        props: {
-            someText: {
-                type: String,
-                default(): string {
-                    return 'Some text value...';
-                },
-                validator(value: string): boolean {
-                    return value.length > 3;
-                },
-            } as PropOptions<string>,
-        }
-    });
+    import { Vue, Component, Prop, PropSync, Model } from 'vue-property-decorator';
+    import { LogComputed, LogMethod } from 'decorators/log';
 
     @Component
-    export default class extends mixins(SameAsFirstExampleProps) {
-        oneWayNumber: number = 0;
-        twoWayText: string = this.someText;
+    export default class extends Vue {
+        @Prop({
+            type: Number,
+            required: true,
+        })
+        readonly initialNumber!: number;
+        oneWayNumber: number = this.initialNumber;
+
+        @Prop({
+            type: String,
+            default: 'Some text value...',
+            validator: (value: string): boolean => value.length > 3,
+        })
+        readonly initialText!: string;
+        twoWayText: string = this.initialText;
+
         isBottomSlotVisible: boolean = true;
 
         @LogComputed

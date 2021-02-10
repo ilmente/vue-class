@@ -70,10 +70,15 @@
 <script>
     export default {
         props: {
-            someText: {
+            initialNumber: {
+                type: Number,
+                required: true,
+            },
+
+            initialText: {
                 type: String,
                 default() {
-                    return 'Some text value...';
+                    return 'Initial text value...';
                 },
                 validator(value) {
                     return value.length > 3;
@@ -83,8 +88,8 @@
 
         data() {
             return {
-                oneWayNumber: 0,
-                twoWayText: this.someText,
+                oneWayNumber: this.initialNumber,
+                twoWayText: this.initialText,
                 isBottomSlotVisible: true,
             }
         },

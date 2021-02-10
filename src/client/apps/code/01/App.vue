@@ -1,6 +1,8 @@
 <template>
     <Layout>
-        <DataBindingAndTemplating someText="This text comes from a prop!">
+        <DataBindingAndTemplating 
+            :initialNumber="10" 
+            initialText="This text comes from a prop!">
             <template #top>
                 <p>
                     <em>This content is injected in the #top slot</em>
