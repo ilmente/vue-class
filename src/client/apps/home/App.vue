@@ -25,7 +25,8 @@
 
             ```
             yarn build --watch      # watch for client code changes
-            yarn serve              # spin the server
+            yarn lambda             # spin the netlify functions local server
+            yarn serve              # spin the dev server
             ```
 
             And follow the instructions in the exercise description page.

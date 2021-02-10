@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "vue-class",
+  "version": "1.0.0",
   "author": {
     "name": "Alessandro Bellini",
     "url": "https://ilmente.com"

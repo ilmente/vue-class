@@ -30,7 +30,7 @@ cd ./vue-class
 # install the dependencies
 yarn install
 
-# run the server
+# run the local server
 yarn start
 ```
 
@@ -47,11 +47,11 @@ yarn build
 # or watch for changes in the code
 yarn build --watch
 
-# run netlify lambda functions server
+# run netlify lambda functions local server
 yarn lambda
 
-# run the server with code watchers
-# and proxies the netlify lambda functions server
+# run the dev server with code watchers
+# and proxies the netlify lambda functions local server
 yarn serve
 
 # generate a static website
