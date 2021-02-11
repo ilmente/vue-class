@@ -1,11 +1,8 @@
-require('toml-require').install();
-
 const express = require('express');
 const proxy = require('express-http-proxy');
-const { http } = require('../config');
+const { http, netlify } = require('../config');
 const { resources } = require('../resources');
 const { render } = require('./renderer');
-const netlify = require('../../netlify.toml');
 
 const app = express();
 
@@ -14,13 +11,19 @@ function log(resource) {
     return resource;
 }
 
+app.use(express.static('public'));
+
+app.use(netlify.endpoint, proxy(`localhost:${netlify.port}${netlify.endpoint}`, {
+    proxyErrorHandler: (err, res, next) => next(err)
+}));
+
 resources
     .map(log)
     .map(resource => app.get(resource.url, (req, res, next) => {
         try {
             const html = render(resource);
 
-            res
+            return res
                 .header('Content-Type', 'text/html')
                 .send(html);
         } catch (error) {
@@ -28,19 +31,18 @@ resources
         }
     }));
 
-app.use(express.static('public'));
-app.use(proxy(`localhost:${http.lambdaPort}`));
-console.log('LAMBDA (proxy)', `/${netlify.build.functions}/<function-name>`);
-
 app.use((err, req, res, next) => {
     console.error(err.stack);
 
-    res
+    return res
         .status(500)
         .send('Ops! Something went wrong...');
 });
 
 app.listen(
-    http.serverPort,
-    () => console.log(`\nServer live at http://localhost:${http.serverPort}...`)
+    http.port,
+    () => {
+        console.log('LAMBDA (proxy)', `/.netlify/functions/<function-name>`);
+        console.log(`\nServer live at http://localhost:${http.port}...`)
+    }
 );

@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <Tabs>
-            <Tab label="Same as first example" isActive>
+            <Tab label="Same as first example">
                 <SameAsFirstExample 
                     :initialNumber="10" 
                     initialText="This text comes from a prop!">
@@ -51,7 +51,7 @@
                     </StyledSub>
                 </Styled>
             </Tab>
-            <Tab label="A deeper dive">
+            <Tab label="A deeper dive" isActive>
                 <DeepDiveParent 
                     :countdown="countdown" 
                     @restart-click="onRestartClick" />

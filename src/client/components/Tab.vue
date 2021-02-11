@@ -27,11 +27,11 @@
     export default class extends mixins(TabProps) {
         isVisible: boolean = this.isActive;
 
-        protected created() {
+        protected created(): void {
             this.register();
         }
 
-        protected register() {
+        protected register(): void {
             const isTabsChild = this.$parent instanceof Tabs;
 
             if (!isTabsChild) {

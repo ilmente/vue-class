@@ -49,7 +49,7 @@
             <li>1-way: <strong>{{oneWayNumber}}</strong></li>
             <li>1-way double (computed): <strong>{{double}}</strong></li>
             <li>2-way: <strong>{{twoWayText}}</strong></li>
-            <li>2-way reverse (method): {{getReverse()}}</li>
+            <li>2-way reverse (method): {{reverse()}}</li>
         </ul>
 
         <label class="checkbox">
@@ -77,9 +77,7 @@
 
             initialText: {
                 type: String,
-                default() {
-                    return 'Initial text value...';
-                },
+                default: 'Initial text value...',
                 validator(value) {
                     return value.length > 3;
                 }
@@ -119,7 +117,7 @@
                 this.oneWayNumber = event.target.value;
             },
 
-            getReverse() {
+            reverse() {
                 const reverse = this.twoWayText
                     .split('')
                     .reverse()

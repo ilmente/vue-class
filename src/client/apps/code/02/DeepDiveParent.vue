@@ -18,11 +18,12 @@
                 What you write here is sync-ed with the child mirror input
             </p>
         </div>
+        
         <template v-for="index in 2">
             <hr :key="`dive-deep-separation-${index}`">
             <DeepDiveChild 
                 :text.sync="syncText" 
-                :superText="syncText" 
+                superText="SUPER TEXT!" 
                 :key="`dive-deep-child-${index}`">
                 <template #mirror="{ syncTextFromParent }">
                     Mirror in scoped slot:

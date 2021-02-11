@@ -12,9 +12,8 @@ Reprising some of the basic concepts introduced in lesson 1, we dive deeper in t
 
 # Summary
 
-- Classes & decorators, part 1
+- Classes & decorators
 - A quick note on scoped styles
-- Classes & decorators, part 2
 - Inheritance and composition
 
 ---
@@ -51,7 +50,7 @@ It provides:
 # `vue-property-decorator`
 
 - `vue-class-component` on steroids (it's build on top of it)
-- add decorators for `@Pros`, `@Watch`, `@Emit` and more
+- add decorators for `@Prop`, `@Watch`, `@Emit` and more
 - some advanced decorator needs time to be mastered (i.e. `@ModelSync`)
 
 ---
@@ -90,18 +89,36 @@ It also provides:
 
 ---
 
-# Inheritance and composition
-*Family and friends*
+# Inheritance
 
-- extend 🤨
+- extend 😕
     - affect behaviour and might lead to chain of refactory
+    - not really fully implemented in vue (`super` is missing)
 - mixins 🤔
-    - if abused, might hide the behaviour details and expose  to side effects
-- high order components 😑
-    - vue makes their implementation harder and not as flexible as in react 
+    - if abused, might hide the behaviour details and expose to side effects
+
+#
+⚠️ In both approaches, lifecycle hook methods are executed  on parent **and** children. No way to extend/overwrite them. *Be aware and use with caution*.
+
+---
+
+# Composition
+
+- high order components 🙂
+    - a good way to manipulate `props`, `attrs`, etc. 
+    - vue makes their implementation a bit harder compared to react 
 - composition 😎
     - does not solve all the problems, but enforces atomocity
     - api? [[docs]](https://v3.vuejs.org/guide/composition-api-introduction.html) + [[vue3 implementation]](https://v3.vuejs.org/api/composition-api.html)
+
+---
+
+# Any other way to reuse code?
+
+- `import` helpers functions (logic encapsulation) 😉
+    - use them directly in the components
+    - expose them as methods
+- use `@Provide` and `@Inject` to *explicitly* provide/access functionalities 🤓
 
 ---
 
