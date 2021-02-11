@@ -91,12 +91,17 @@ It also provides:
 ---
 
 # Inheritance and composition
+*Family and friends*
 
-- extend: use it with its own limitations, and do not abuse it
-- mixin: use it but do not abuse it
-- high order components: well, sort of...
-- composition: absulute favourite here!
-    - api [[what and why?]](https://v3.vuejs.org/guide/composition-api-introduction.html) + [[vue3 implementation]](https://v3.vuejs.org/api/composition-api.html)
+- extend 🤨
+    - affect behaviour and might lead to chain of refactory
+- mixins 🤔
+    - if abused, might hide the behaviour details and expose  to side effects
+- high order components 😑
+    - vue makes their implementation harder and not as flexible as in react 
+- composition 😎
+    - does not solve all the problems, but enforces atomocity
+    - api? [[docs]](https://v3.vuejs.org/guide/composition-api-introduction.html) + [[vue3 implementation]](https://v3.vuejs.org/api/composition-api.html)
 
 ---
 
