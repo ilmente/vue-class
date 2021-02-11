@@ -29,7 +29,7 @@
 
         @LogMethod
         superMethod(): string {
-            return this.superText;
+            return `**${this.superText}**`;
         }
     }
 </script>

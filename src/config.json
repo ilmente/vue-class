@@ -1,7 +1,11 @@
 {
     "http": {
-        "serverPort": 3003,
-        "lambdaPort": 9000
+        "port": 3003
+    },
+
+    "netlify": {
+        "port": 9000,
+        "endpoint": "/.netlify/functions"
     },
 
     "resourcePatterns": [

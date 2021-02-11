@@ -49,7 +49,7 @@
             <li>1-way: <strong>{{oneWayNumber}}</strong></li>
             <li>1-way double (computed): <strong>{{double}}</strong></li>
             <li>2-way: <strong>{{twoWayText}}</strong></li>
-            <li>2-way reverse (method): {{getReverse()}}</li>
+            <li>2-way reverse (method): {{reverse()}}</li>
         </ul>
 
         <label class="checkbox">
@@ -80,14 +80,16 @@
             required: true,
         })
         readonly initialNumber!: number;
+
         oneWayNumber: number = this.initialNumber;
 
         @Prop({
             type: String,
             default: 'Some text value...',
             validator: (value: string): boolean => value.length > 3,
-        })
+        }) 
         readonly initialText!: string;
+        
         twoWayText: string = this.initialText;
 
         isBottomSlotVisible: boolean = true;
@@ -100,13 +102,13 @@
         created(): void {
             // look in the console to better understand the difference
             // in lifecycle
-            console.log('created');
+            console.log('TS created');
         }
 
         mounted(): void {
             // look in the console to better understand the difference
             // in lifecycle
-            console.log('mounted');
+            console.log('TS mounted');
         }
 
         onInput(event: Event): void {
@@ -115,7 +117,7 @@
         }
 
         @LogMethod
-        getReverse(): string {
+        reverse(): string {
             return this.twoWayText
                 .split('')
                 .reverse()

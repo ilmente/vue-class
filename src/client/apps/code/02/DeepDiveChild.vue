@@ -35,7 +35,7 @@
         syncTextFromParent!: string;
 
         mounted(): void {
-            console.log('[mounted child]');
+            console.log('[mounted child]', this.superText);
         }
     }
 </script>
