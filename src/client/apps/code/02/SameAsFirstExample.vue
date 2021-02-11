@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <h1>Same as first example, but in typescript...</h1>
+        <h1>Data binding and templating... but using TS</h1>
 
         <slot name="top"></slot>
 
@@ -70,7 +70,7 @@
 </template>
 
 <script lang="ts">
-    import { Vue, Component, Prop, PropSync, Model } from 'vue-property-decorator';
+    import { Vue, Component, Prop } from 'vue-property-decorator';
     import { LogComputed, LogMethod } from 'decorators/log';
 
     @Component

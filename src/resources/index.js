@@ -1,4 +1,8 @@
-const { groupBy, reduce, head, sortBy, startCase } = require('lodash');
+const groupBy = require('lodash/groupBy');
+const reduce = require('lodash/reduce');
+const head = require('lodash/head');
+const sortBy = require('lodash/sortBy');
+const startCase = require('lodash/startCase');
 const { crawl } = require('./crawler');
 
 const resources = sortBy(crawl(), ['url']);

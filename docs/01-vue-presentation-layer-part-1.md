@@ -14,7 +14,6 @@ Introducing Vue and its basic concepts, like one-way data binding, reactive data
 
 - Introduction
 - Data binding
-- Styling
 - Templating
 
 ---
@@ -89,11 +88,6 @@ Given an input field binded to a variable...
 # Code time
 
 **Pro tip**: take notes here...
-
-### References
-
-- [Reactive data](https://vuejs.org/v2/guide/reactivity.html)
-- [One way data flow](https://vuejs.org/v2/guide/components-props.html)
 
 ---
 
@@ -182,4 +176,16 @@ in the form of html5 attributes
 
 ---
 
+![bg left](/assets/docs/code.jpg)
+
+# Code time
+
+**Pro tip**: take notes here...
+
+---
+
+![bg left](/assets/docs/qea.jpg)
+
 # Q&A
+
+**Pro tip**: ask stuff...

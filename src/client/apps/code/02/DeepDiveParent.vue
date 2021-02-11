@@ -1,30 +1,10 @@
 <template>
     <section class="deep-dive-parent content">
-        <h1>A deeper dive into <code>@Decorators()</code> and TS stuff...</h1>
-
-        <div class="box">
-            <p>
-                <button 
-                    class="button is-danger is-small is-pulled-right" 
-                    @click="onRestartClick">
-                    Restart countdown
-                </button>
-                ⏰ Countdown from mixin: 
-                <strong>{{ this.remainingSeconds }}</strong>
-            </p>
-            <blockquote class="has-text-danger">
-                ⚠️ Use mixins resposably, please!
-            </blockquote>
-        </div>
-
-        <div class="columns">
-            <div class="column is-half">
-                <DeepDiveChildSuper />
-            </div>
-            <div class="column is-half">
-                <DeepDiveChildHOC />
-            </div>
-        </div>
+        <h1>
+            Jump! Head first into 
+            <code>@Decorators</code> 
+            and TS <em>stuff</em>
+        </h1>
 
         <h3>👨‍🦳 Parent component</h3>
         <div class="field">
@@ -62,6 +42,33 @@
                     from <strong>{{ from }}</strong> to <strong>{{ to }}</strong>
                 </li>
             </ol>
+        </div>
+
+        <hr>
+        <h3>🏡 Family matters...</h3>
+
+        <div class="box">
+            <p>
+                <button 
+                    class="button is-danger is-small is-pulled-right" 
+                    @click="onRestartClick">
+                    Restart countdown
+                </button>
+                ⏰ Countdown from mixin: 
+                <strong>{{ this.remainingSeconds }}</strong>
+            </p>
+            <blockquote class="has-text-danger">
+                ⚠️ Use mixins resposably, please!
+            </blockquote>
+        </div>
+
+        <div class="columns">
+            <div class="column is-half">
+                <DeepDiveChildSuper />
+            </div>
+            <div class="column is-half">
+                <DeepDiveChildHOC />
+            </div>
         </div>
     </section>
 </template>
