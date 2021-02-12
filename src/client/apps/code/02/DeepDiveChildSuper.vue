@@ -15,7 +15,9 @@
     import { Vue, Component, Prop } from 'vue-property-decorator';
     import { LogMethod } from 'decorators/log';
 
-    @Component
+    @Component({
+        name: 'DeepDiveChildSuper',
+    })
     export default class extends Vue {
         @Prop({
             type: String,

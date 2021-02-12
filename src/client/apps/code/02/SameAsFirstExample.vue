@@ -73,7 +73,9 @@
     import { Vue, Component, Prop } from 'vue-property-decorator';
     import { LogComputed, LogMethod } from 'decorators/log';
 
-    @Component
+    @Component({
+        name: 'SameAsFirstExample',
+    })
     export default class extends Vue {
         @Prop({
             type: Number,

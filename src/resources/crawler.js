@@ -1,10 +1,10 @@
 const glob = require('fast-glob');
 const { createResource } = require('./resource');
-const { resourcePatterns } = require('../config');
+const { resources } = require('../config');
 
 function crawl() {
     return glob
-        .sync(resourcePatterns, {
+        .sync(resources.patterns, {
             followSymbolicLinks: false,
             absolute: false,
             onlyFiles: true,

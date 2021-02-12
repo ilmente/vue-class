@@ -47,12 +47,12 @@ yarn build
 # or watch for changes in the code
 yarn build --watch
 
-# run netlify lambda functions local server
-yarn lambda
-
 # run the dev server with code watchers
 # and proxies the netlify lambda functions local server
 yarn serve
+
+# run netlify lambda functions local server
+yarn serve:lambda
 
 # generate a static website
 yarn generate

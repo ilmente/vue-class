@@ -7,16 +7,16 @@
     "url": "https://ilmente.com"
   },
   "scripts": {
-    "preserve": "netlify-lambda build src/lambda",
-    "prestart": "webpack --config ./src/build/webpack.config.js && netlify-lambda build src/lambda",
-    "pregenerate": "webpack --config ./src/build/webpack.config.js --env production --node-env production",
+    "postinstall": "netlify-lambda install src/lambda",
+
     "build": "webpack --config ./src/build/webpack.config.js",
     "build:prod": "webpack --config ./src/build/webpack.config.js --env production --node-env production",
-    "lambda": "netlify-lambda serve src/lambda",
     "serve": "nodemon ./src/server/task-serve",
-    "start": "node ./src/server/task-serve",
+    "serve:lambda": "netlify-lambda serve src/lambda",
     "generate": "node ./src/server/task-generate",
-    "postinstall": "netlify-lambda install src/lambda"
+
+    "start": "webpack --config ./src/build/webpack.config.js && node ./src/server/task-serve",
+    "deploy": "yarn build:prod && yarn generate"
   },
   "dependencies": {
     "bulma": "~0.9.2",
