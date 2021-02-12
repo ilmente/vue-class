@@ -13,8 +13,8 @@
                 child component can access the resulting response.
 
                 Add a *loading* and an *error* slot too, just 
-                to make it more complete and manage the loading state and
-                the possible error state.
+                to make it complete and manage the *loading state* and
+                the possible *error state*.
 
                 ```
                 |Client url="/url-here"
@@ -27,8 +27,10 @@
                 You can connect to a local service `/.netlify/functions/comments`
                 that will return an array of comments to display.
 
-                **Be aware:** sometimes (by design) the servise will return an error,
-                so you need to manage it.
+                **Be aware:** sometimes (by design) the service will return an error,
+                so you need to manage it. Moreover, I added a small artificial delay to each 
+                succesfull response. This way, you're *kind of* forced to implement a
+                loading management strategy.
 
                 ### Pro tip
 
@@ -50,7 +52,7 @@
                 - on third terminal: `yarn serve:lambda` to spin up the netlify lambda local dev server
 
                 To test if `comments` service is successfully running, click here: 
-                [/.netlify/functions/comments](http://localhost:3003/.netlify/functions/comments). 
+                [/.netlify/functions/comments](/.netlify/functions/comments). 
 
                 ## Code structure (suggested)
 
