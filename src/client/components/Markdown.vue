@@ -18,11 +18,18 @@
 </style>
 
 <script lang="ts">
-    import Vue from 'vue';
+    import Vue, { PropOptions } from 'vue';
     import marked from 'marked';
     import { sanitize } from 'dompurify';
 
     export default Vue.extend({
+        props: {
+            noSanitize: {
+                type: Boolean,
+                default: false,
+            } as PropOptions<boolean>,
+        },
+
         data() {
             return {
                 html: '',
@@ -44,6 +51,11 @@
 
                 const trimmedMarkdown = this.deepTrim(markdown);
                 const html = marked(trimmedMarkdown);
+
+                if (this.noSanitize) {
+                    this.html = html;
+                    return;
+                }
                 
                 this.html = sanitize(html);
             },

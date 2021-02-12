@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "vue-class-lambda",
+  "version": "1.0.0",
+  "author": {
+    "name": "Alessandro Bellini",
+    "url": "https://ilmente.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "faker": "~5.4.0"
+  }
+}

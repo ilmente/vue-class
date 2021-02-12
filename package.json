@@ -6,19 +6,19 @@
     "name": "Alessandro Bellini",
     "url": "https://ilmente.com"
   },
+  "license": "MIT",
   "scripts": {
     "postinstall": "netlify-lambda install src/lambda",
-
     "build": "webpack --config ./src/build/webpack.config.js",
     "build:prod": "webpack --config ./src/build/webpack.config.js --env production --node-env production",
     "serve": "nodemon ./src/server/task-serve",
     "serve:lambda": "netlify-lambda serve src/lambda",
     "generate": "node ./src/server/task-generate",
-
     "start": "webpack --config ./src/build/webpack.config.js && node ./src/server/task-serve",
     "deploy": "yarn build:prod && yarn generate"
   },
   "dependencies": {
+    "axios": "~0.21.1",
     "bulma": "~0.9.2",
     "dompurify": "~2.2.6",
     "lodash": "~4.17.20",
