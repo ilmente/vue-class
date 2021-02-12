@@ -23,7 +23,9 @@
         }
     })
 
-    @Component
+    @Component({
+        name: 'Tab',
+    })
     export default class extends mixins(TabProps) {
         isVisible: boolean = this.isActive;
 

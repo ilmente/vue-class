@@ -38,7 +38,9 @@
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
 
-    @Component
+    @Component({
+        name: 'Styled',
+    })
     export default class extends Vue {
         isDeep: boolean = false;
 

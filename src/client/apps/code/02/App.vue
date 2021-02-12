@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <Tabs>
-            <Tab label="Same as first example">
+            <Tab label="Same as first example" isActive>
                 <SameAsFirstExample 
                     :initialNumber="10" 
                     initialText="This text comes from a prop!">
@@ -51,7 +51,7 @@
                     </StyledSub>
                 </Styled>
             </Tab>
-            <Tab label="A deeper dive" isActive>
+            <Tab label="A deeper dive">
                 <DeepDiveParent 
                     :countdown="countdown" 
                     @restart-click="onRestartClick" />
@@ -68,6 +68,7 @@
     import DeepDiveParent from './DeepDiveParent.vue';
 
     @Component({
+        name: 'App',
         components: {
             SameAsFirstExample,
             Styled,

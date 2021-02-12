@@ -99,6 +99,7 @@
     }
 
     @Component({
+        name: 'DeepDiveParent',
         components: {
             DeepDiveChild,
             DeepDiveChildSuper,

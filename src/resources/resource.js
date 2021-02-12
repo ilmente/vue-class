@@ -3,6 +3,8 @@ const { join, basename, dirname } = require('path');
 const { labels } = require('../config');
 
 const root = process.cwd();
+const isAppDomain = (domain) => domain === 'apps';
+const isHome = (entry) => entry === 'home';
 
 function clean(value) {
     return value.replace(/(index\.(js|ts)|\.md)/i, '');
@@ -19,36 +21,34 @@ function loadFile(path, name) {
 }
 
 function createResource(path) {
+    // fs
     const fullPath = join(root, path);
-    const dir = dirname(join(root, path));
-    const name = basename(clean(path));
-    const domain = basename(dirname(clean(path)));
-    const entry = join(domain, name);
-    const url = join('/', entry);
+    const directory = dirname(fullPath);
     const isMarkdown = /\.md?/.test(fullPath);
 
+    // files
+    const meta = loadFile(directory, '@meta.json');
+    const data = loadFile(directory, '@data.js');
+
+    // url
+    const name = basename(clean(path));
+    const domain = basename(dirname(clean(path)));
+    const entry = isAppDomain(domain) ? name : `${domain}/${name}`;
+    const base = `/${entry}`;
+    const url = isHome(entry) ? '/' : `/${entry}`;
+    
     const resource = {
-        domain,
-        domainLabel: labels[domain],
         path,
         fullPath,
         name,
+        domain,
+        domainLabel: labels[domain],
         entry,
+        base,
         url,
-        base: url,
-        meta: loadFile(dir, '@meta.json') || {},
-        data: loadFile(dir, '@data.js') || {},
+        meta,
+        data,
         isMarkdown,
-    }
-
-    if (domain === 'apps') {
-        resource.entry = name;
-        resource.url = join('/', name);
-        resource.base = resource.url;
-    }
-
-    if (entry === 'apps/home') {
-        resource.url = '/';
     }
 
     if (!isMarkdown) {

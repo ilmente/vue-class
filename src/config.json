@@ -8,12 +8,14 @@
         "endpoint": "/.netlify/functions"
     },
 
-    "resourcePatterns": [
-        "docs/*.md",
-        "src/client/apps/*/index.{js,ts}",
-        "src/client/apps/code/*/index.{js,ts}",
-        "src/client/apps/exercise/*/index.{js,ts}"
-    ],
+    "resources": {
+        "patterns": [
+            "docs/*.md",
+            "src/client/apps/*/index.{js,ts}",
+            "src/client/apps/code/*/index.{js,ts}",
+            "src/client/apps/exercise/*/index.{js,ts}"
+        ]
+    },
 
     "labels": {
         "apps": "Vue Class",

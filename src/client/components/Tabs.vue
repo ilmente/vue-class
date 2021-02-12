@@ -20,7 +20,9 @@
     import Component from 'vue-class-component';
     import Tab from 'components/Tab.vue';
 
-    @Component
+    @Component({
+        name: 'Tabs',
+    })
     export default class extends Vue {
         protected tabs: Tab[] = [];
 

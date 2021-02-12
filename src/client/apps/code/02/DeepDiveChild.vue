@@ -26,7 +26,9 @@
     import { Component, PropSync } from 'vue-property-decorator';
     import DeepDiveChildSuper from './DeepDiveChildSuper.vue';
 
-    @Component
+    @Component({
+        name: 'DeepDiveChild',
+    })
     export default class extends DeepDiveChildSuper {
         @PropSync('text', {
             type: String,
