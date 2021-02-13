@@ -30,7 +30,7 @@
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
     import UsingProps from './UsingProps.vue';
-    import { Post } from 'typings/post';
+    import { Post } from 'typings/Post';
     import reduce from 'lodash/reduce'; 
     import cloneDeep from 'lodash/cloneDeep'; 
 
