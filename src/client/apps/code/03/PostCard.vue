@@ -1,0 +1,53 @@
+<template>
+    <div class="card">
+        <div class="card-image">
+            <figure class="image is-4by3">
+                <img :src="post.imageSrc">
+            </figure>
+        </div>
+
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <p class="title is-4">{{post.name}}</p>
+                    <p class="subtitle is-6">@{{post.username}}</p>
+                </div>
+            </div>
+
+            <div class="content">
+                {{post.content}}
+            </div>
+        </div>
+
+        <footer class="card-footer">
+            <p class="card-footer-item">
+                <button class="button is-info" @click="onDislikeClick">
+                    👎 Dislike ({{dislikes}})
+                </button>
+            </p>
+        </footer>
+    </div>
+</template>
+
+<script lang="ts">
+    import { Vue, Component, Prop, Emit } from 'vue-property-decorator';
+    import { Post } from 'typings/post';
+
+    @Component({
+        name: 'PostCard',
+    })
+    export default class extends Vue {
+        @Prop({
+            type: Object,
+            required: true,
+        })
+        post!: Post;
+
+        dislikes: number = this.post.dislikes;
+
+        @Emit('dislike')
+        onDislikeClick(): void {
+            this.dislikes += 1;
+        }
+    }
+</script>

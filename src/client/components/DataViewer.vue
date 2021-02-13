@@ -1,7 +1,7 @@
 <template>
     <section class="my-5 content box">
         <h3 class="my-0">
-            Data viewer
+            Local data viewer
             <button 
                 class="button is-small is-primary is-pulled-right"
                 @click="onClick">
@@ -9,7 +9,7 @@
             </button>
         </h3>
         
-        You can find the code for this exercise in <code>{{ location }}</code>
+        You can find the code for this app in <code>{{ location }}</code>
 
         <div class="mt-3" v-show="isVisible">
             <hr>

@@ -56,7 +56,7 @@
         </section>
 
         <main class="container is-max-desktop">
-            <div class="my-5">
+            <div class="my-5" :class="contentStyle && 'content'">
                 <slot v-bind="item"></slot>
             </div>
         </main>
@@ -84,7 +84,7 @@
 </style>
 
 <script lang="ts">
-    import Vue from 'vue';
+    import Vue, { PropOptions } from 'vue';
     import Logo from 'components/Logo.vue';
     import { NavigationItem } from 'typings/Navigation';
     import { Platform } from 'typings/State';
@@ -92,6 +92,13 @@
     export default Vue.extend({
         components: {
             Logo
+        },
+
+        props: {
+            contentStyle: {
+                type: Boolean,
+                default: false,
+            } as PropOptions<boolean>
         },
 
         data() {
