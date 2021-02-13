@@ -13,3 +13,4 @@ yarn-debug.log*
 yarn-error.log*
 
 _*
+src/lambda/yarn.lock

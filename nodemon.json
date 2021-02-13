@@ -5,7 +5,8 @@
         "docs",
         "src/server",
         "src/resources",
-        "src/client/**/@meta.json"
+        "src/client/**/@meta.json",
+        "src/client/**/@data.js"
     ],
     "ignore": [
         "*.ts",
