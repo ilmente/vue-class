@@ -31,7 +31,7 @@
 
 <script lang="ts">
     import { Vue, Component, Prop, Emit } from 'vue-property-decorator';
-    import { Post } from 'typings/post';
+    import { Post } from 'typings/Post';
 
     @Component({
         name: 'PostCard',
