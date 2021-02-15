@@ -5,6 +5,7 @@
         "docs",
         "src/server",
         "src/resources",
+        "src/lambda",
         "src/client/**/@meta.json",
         "src/client/**/@data.js"
     ],

@@ -21,16 +21,14 @@
 
         <footer class="card-footer">
             <p class="card-footer-item">
-                <button class="button is-info" @click="onDislikeClick">
-                    👎 Dislike ({{dislikes}})
-                </button>
+                <slot :post="post"></slot>
             </p>
         </footer>
     </div>
 </template>
 
 <script lang="ts">
-    import { Vue, Component, Prop, Emit } from 'vue-property-decorator';
+    import { Vue, Component, Prop } from 'vue-property-decorator';
     import { Post } from 'typings/Post';
 
     @Component({
@@ -42,12 +40,5 @@
             required: true,
         })
         post!: Post;
-
-        dislikes: number = this.post.dislikes;
-
-        @Emit('dislike')
-        onDislikeClick(): void {
-            this.dislikes += 1;
-        }
     }
 </script>

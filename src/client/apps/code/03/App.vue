@@ -1,25 +1,25 @@
 <template>
     <Layout>
         <div class="content">
-            <h3>Dislike count</h3>
+            <h3>Dislikes count</h3>
             <ul>
-                <li>Props with clone: {{countDislikes(postsForPropsClone)}}</li>
-                <li>Props with clone deep: {{countDislikes(postsForPropsDeepClone)}}</li>
+                <li>Local state: <strong>{{localStateCount}}</strong></li>
+                <li>Simple store: <strong>{{getSimpleStoreCount()}}</strong></li>
+                <li>Vuex store: <strong>x</strong></li>
             </ul>
         </div>
 
+        <hr>
+        <h3>Apps</h3>
         <Tabs>
-            <Tab label="Using properties 😱" isActive>
-                <UsingProps :posts="postsForPropsClone" />
+            <Tab label="Local state 🤨" isActive>
+                <UseLocalState />
             </Tab>
-            <Tab label="Using properties with deep clone 😩">
-                <UsingProps :posts="postsForPropsDeepClone" />
+            <Tab label="Simple store 🙂">
+                <UseSimpleStore />
             </Tab>
-            <Tab label="Using a store 🙂">
-                
-            </Tab>
-            <Tab label="Using Vuex store 🤓">
-                
+            <Tab label="Vuex store 🤓">
+                <UseVuexStore />
             </Tab>
         </Tabs>
 
@@ -29,30 +29,43 @@
 
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
-    import UsingProps from './UsingProps.vue';
-    import { Post } from 'typings/Post';
-    import reduce from 'lodash/reduce'; 
-    import cloneDeep from 'lodash/cloneDeep'; 
-
-    const postsClone: Post[] = [...window.__INITIAL_STATE__.posts as Post[]];
-    const postsDeepClone: Post[] = cloneDeep(window.__INITIAL_STATE__.posts as Post[]);
+    import { eventBus } from 'helpers/event-bus';
+    import { simpleStore } from './connection/simple-store';
+    import UseLocalState from './UseLocalState.vue';
+    import UseSimpleStore from './UseSimpleStore.vue';
+    import UseVuexStore from './UseVuexStore.vue';
 
     @Component({
         name: 'App',
         components: {
-            UsingProps,
+            UseLocalState,
+            UseSimpleStore,
+            UseVuexStore,
         }
     })
     export default class extends Vue {
-        postsForPropsClone: Post[] = postsClone;
-        postsForPropsDeepClone: Post[] = postsDeepClone;
+        /**
+         * local state
+         */
+        localStateCount: number = 0;
 
-        countDislikes(posts: Post[]): number {
-            return reduce(
-                posts, 
-                (counter: number, post: Post) => counter + post.dislikes,
-                0
-            );
+        created() {
+            eventBus.on('local-state-dislike', (count: number) => {
+                this.localStateCount = count;
+            });
         }
+
+        /**
+         * simple store
+         * I need to use a method here
+         * a computed prop won't work...
+         */
+        getSimpleStoreCount(): number {
+            return simpleStore.getTotalDislikes();
+        }
+
+        /**
+         * vuex store
+         */
     }
 </script>

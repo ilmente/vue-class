@@ -1,19 +1,4 @@
-const faker = require('faker');
-
-function generatePosts(count) {
-    return new Array(count)
-        .fill({
-            dislikes: 0,
-        })
-        .map(product => ({
-            ...product,
-
-            name: `${faker.name.firstName()} ${faker.name.lastName()}`,
-            username: faker.internet.userName(),
-            content: faker.commerce.productDescription(),
-            imageSrc: faker.image.image(),
-        }))
-}
+const { generatePosts } = require('../../../../lambda/posts');
 
 module.exports = {
     posts: generatePosts(3),

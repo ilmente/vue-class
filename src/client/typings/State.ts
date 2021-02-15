@@ -1,4 +1,5 @@
 import { Navigation } from './Navigation';
+import { Post } from './Post';
 
 export interface Platform {
     version: string;
@@ -8,5 +9,6 @@ export interface Platform {
 export interface State {
     platform: Platform;
     navigation: Navigation;
+    posts?: Post[];
     [key: string]: unknown;
 }

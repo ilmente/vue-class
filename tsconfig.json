@@ -37,9 +37,12 @@
         "src/client/**/*.vue"
     ],
     "exclude": [
+        ".vscode",
         "node_modules",
         "docs",
         "public",
-        "src/client/pages/code-examples/01/*.vue"
+        "assets",
+        "netlify",
+        "src/client/apps/code/01/*.vue"
     ]
 }
