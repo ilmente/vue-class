@@ -1,8 +1,8 @@
 import cloneDeep from 'lodash/cloneDeep'; 
 import reduce from 'lodash/reduce';
-import { Post } from 'typings/Post';
+import { Post } from 'typings/post';
 import { netlify } from 'helpers/network-provider';
-import { State } from 'typings/State';
+import { State } from 'typings/state';
 
 export const simpleStore = ((initialState: State) => ({
     state: { 

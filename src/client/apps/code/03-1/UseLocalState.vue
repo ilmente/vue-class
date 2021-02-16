@@ -10,7 +10,7 @@
 
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
-    import { Post } from 'typings/Post';
+    import { Post } from 'typings/post';
     import { netlify } from 'helpers/network-provider';
     import { eventBus } from 'helpers/event-bus';
     import cloneDeep from 'lodash/cloneDeep'; 

@@ -5,7 +5,7 @@
             <ul>
                 <li>Local state: <strong>{{localStateCount}}</strong></li>
                 <li>Simple store: <strong>{{getSimpleStoreCount()}}</strong></li>
-                <li>Vuex store: <strong>x</strong></li>
+                <li>Vuex store: <strong>{{totalDislikes}}</strong></li>
             </ul>
         </div>
 
@@ -31,6 +31,7 @@
     import { Vue, Component } from 'vue-property-decorator';
     import { eventBus } from 'helpers/event-bus';
     import { simpleStore } from './connection/simple-store';
+    import { Getter } from 'vuex-class';
     import UseLocalState from './UseLocalState.vue';
     import UseSimpleStore from './UseSimpleStore.vue';
     import UseVuexStore from './UseVuexStore.vue';
@@ -67,5 +68,6 @@
         /**
          * vuex store
          */
+        @Getter totalDislikes!: number;
     }
 </script>

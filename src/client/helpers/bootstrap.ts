@@ -14,7 +14,7 @@ Vue.component('Tab', Tab);
 Vue.component('Tabs', Tabs);
 Vue.component('Grid', Grid);
 
-export const simpleBootstrap = <S = any>(App: VueConstructor<Vue>, store?: Store<S>) => {
+export const bootstrap = <S = any>(App: VueConstructor<Vue>, store?: Store<S>) => {
     const app = new Vue({
         template: `<App />`,
         store,

@@ -1,4 +1,4 @@
 import App from './App.vue';
-import { simpleBootstrap } from 'helpers/bootstrap';
+import { bootstrap } from 'helpers/bootstrap';
 
-simpleBootstrap(App);
+bootstrap(App);

@@ -1,5 +1,5 @@
 <template>
-    <Grid :items="store.state.posts">
+    <Grid :items="posts">
         <template #default="{ item }">
             <PostCard :post="item">
                 <DislikeButton :initial-dislikes="item.dislikes" @dislike="onDislike(item.id)" />
@@ -10,7 +10,8 @@
 
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
-    import { simpleStore } from './connection/simple-store';
+    import { State, Action, Mutation } from 'vuex-class';
+    import { Post } from 'typings/post';
     import PostCard from './PostCard.vue';
     import DislikeButton from './DislikeButton.vue';
 
@@ -22,14 +23,16 @@
         }
     })
     export default class extends Vue {
-        store = simpleStore;
+        @State posts!: Post[];
+        @Mutation('INCREASE_POST_DISLIKES') increasePostDislikes!: Function;
+        @Action loadLivePosts!: Function
 
         async mounted(): Promise<void> {
-            await this.store.loadLivePosts();
+            await this.loadLivePosts();
         }
 
         onDislike(id: string): void {
-            this.store.increasePostDislikes(id);
+            this.increasePostDislikes({ id });
         }
     }
 </script>

@@ -1,4 +1,4 @@
-import { State } from './typings/State';
+import { State } from './typings/state';
 
 declare global {
     interface Window {
