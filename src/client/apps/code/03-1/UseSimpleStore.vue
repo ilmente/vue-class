@@ -1,5 +1,5 @@
 <template>
-    <Grid :items="blog.posts">
+    <Grid :items="state.posts">
         <template #default="{ item }">
             <PostCard :post="item">
                 <DislikeButton :initial-dislikes="item.dislikes" @dislike="onDislike(item.id)" />
@@ -13,7 +13,7 @@
     import { simpleStore } from './store/SimpleStore';
     import PostCard from './PostCard.vue';
     import DislikeButton from './DislikeButton.vue';
-    import { Blog } from '@typings/blog';
+    import { RootState } from './typings/RootState';
 
     @Component({
         name: 'UseLocalState',
@@ -23,7 +23,7 @@
         }
     })
     export default class extends Vue {
-        blog: Blog = simpleStore.state.blog;
+        state: RootState = simpleStore.state;
 
         async mounted(): Promise<void> {
             await simpleStore.loadLivePosts();

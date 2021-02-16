@@ -1,1 +1,7 @@
-module.exports = require('../03-1/@data');
+const { generatePosts } = require('../../../../lambda/posts');
+
+module.exports = {
+    blog: {
+        posts: generatePosts(3),
+    },
+}

@@ -11,7 +11,7 @@
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
     import { State, Action, Mutation } from 'vuex-class';
-    import { Post } from '@typings/blog';
+    import { Post } from './typings/Post';
     import PostCard from './PostCard.vue';
     import DislikeButton from './DislikeButton.vue';
 

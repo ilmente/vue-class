@@ -2,10 +2,10 @@ import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
 import cloneDeep from 'lodash/cloneDeep'; 
 import reduce from 'lodash/reduce';
-import { Post } from '@typings/blog';
 import { netlify } from '@helpers/network-provider';
 import { AxiosResponse } from 'axios';
 import { RootState } from '../typings/RootState';
+import { Post } from '../typings/Post';
 
 Vue.use(Vuex);
 
@@ -18,7 +18,7 @@ export const vuexStore: Store<RootState> = new Vuex.Store({
 
     mutations: {
         SET_POSTS(state: RootState, posts: Post[]) {
-            state.blog.posts = [
+            state.posts = [
                 ...state.posts || [],
                 ...posts,
             ];

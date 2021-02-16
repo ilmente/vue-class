@@ -1,4 +1,4 @@
-import { Post } from './typings/Post';
+import { Post } from '../typings/Post';
 import { netlify } from '@helpers/network-provider';
 import { AxiosResponse } from 'axios';
 

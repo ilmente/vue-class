@@ -29,7 +29,7 @@
 
 <script lang="ts">
     import { Vue, Component, Prop } from 'vue-property-decorator';
-    import { Post } from '@typings/blog';
+    import { Post } from './typings/Post';
 
     @Component({
         name: 'PostCard',

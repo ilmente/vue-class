@@ -1,8 +1,8 @@
 import cloneDeep from 'lodash/cloneDeep'; 
 import reduce from 'lodash/reduce';
-import { Post } from '@typings/blog';
 import { netlify } from '@helpers/network-provider';
 import { AxiosResponse } from 'axios';
+import { Post } from '../typings/Post';
 import { RootState } from '../typings/RootState';
 
 export const simpleStore = ((state: RootState) => ({
@@ -21,7 +21,7 @@ export const simpleStore = ((state: RootState) => ({
             url: '/posts'
         });
 
-        this.state.blog.posts = [
+        this.state.posts = [
             ...this.state.posts,
             ...data,
         ];

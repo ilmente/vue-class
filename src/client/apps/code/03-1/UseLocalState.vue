@@ -10,14 +10,14 @@
 
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
-    import { Post } from '@typings/blog';
     import { netlify } from '@helpers/network-provider';
     import { eventBus } from '@helpers/event-bus';
     import cloneDeep from 'lodash/cloneDeep'; 
     import reduce from 'lodash/reduce';
+    import { Post } from './typings/Post';
     import PostCard from './PostCard.vue';
     import DislikeButton from './DislikeButton.vue';
-import { AxiosResponse } from 'axios';
+    import { AxiosResponse } from 'axios';
 
     @Component({
         name: 'UseLocalState',
