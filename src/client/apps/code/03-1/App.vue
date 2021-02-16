@@ -29,8 +29,8 @@
 
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
-    import { eventBus } from 'helpers/event-bus';
-    import { simpleStore } from './connection/simple-store';
+    import { eventBus } from '@helpers/event-bus';
+    import { simpleStore } from './store/SimpleStore';
     import { Getter } from 'vuex-class';
     import UseLocalState from './UseLocalState.vue';
     import UseSimpleStore from './UseSimpleStore.vue';

@@ -1,5 +1,1 @@
-const { generatePosts } = require('../../../../lambda/posts');
-
-module.exports = {
-    posts: generatePosts(3),
-}
+module.exports = require('../03-1/@data');

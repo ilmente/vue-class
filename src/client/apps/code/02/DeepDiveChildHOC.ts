@@ -1,4 +1,4 @@
-import { hoc } from 'helpers/hoc';
+import { hoc } from '@helpers/hoc';
 import DeepDiveChildSuper from './DeepDiveChildSuper.vue';
 
 export default hoc(DeepDiveChildSuper, {

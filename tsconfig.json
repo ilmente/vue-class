@@ -21,11 +21,10 @@
             "dom"
         ],
         "paths": {
-            "src/": ["src/*"],
-            "components/*": ["src/client/components/*"],
-            "helpers/*": ["src/client/helpers/*"],
-            "decorators/*": ["src/client/decorators/*"],
-            "typings/*": ["src/client/typings/*"]
+            "@components/*": ["src/client/components/*"],
+            "@helpers/*": ["src/client/helpers/*"],
+            "@decorators/*": ["src/client/decorators/*"],
+            "@typings/*": ["src/client/typings/*"]
         }
     },
     "files": [

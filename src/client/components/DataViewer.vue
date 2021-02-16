@@ -26,6 +26,7 @@
 </template>
 
 <script lang="ts">
+    import { InitialState } from '@typings/InitialState';
     import Vue, { PropOptions } from 'vue';
 
     export default Vue.extend({
@@ -52,7 +53,7 @@
             },
 
             initialState(): string {
-                const initialState = window.__INITIAL_STATE__ || {};
+                const initialState: InitialState = window.__INITIAL_STATE__;
                 const initialStateCopy: any = { ...initialState };
 
                 if (!this.showNavigation) {

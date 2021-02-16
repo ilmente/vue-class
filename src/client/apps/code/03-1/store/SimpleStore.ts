@@ -1,14 +1,12 @@
 import cloneDeep from 'lodash/cloneDeep'; 
 import reduce from 'lodash/reduce';
-import { Post } from 'typings/post';
-import { netlify } from 'helpers/network-provider';
-import { State } from 'typings/state';
+import { Post } from '@typings/blog';
+import { netlify } from '@helpers/network-provider';
+import { AxiosResponse } from 'axios';
+import { RootState } from '../typings/RootState';
 
-export const simpleStore = ((initialState: State) => ({
-    state: { 
-        ...initialState,
-        posts: initialState.posts || [],
-    },
+export const simpleStore = ((state: RootState) => ({
+    state,
 
     getTotalDislikes(): number {
         return reduce(
@@ -19,13 +17,13 @@ export const simpleStore = ((initialState: State) => ({
     },
 
     async loadLivePosts(): Promise<void> {
-        const { data } = await netlify({
+        const { data }: AxiosResponse<Post[]> = await netlify({
             url: '/posts'
         });
 
-        this.state.posts = [
+        this.state.blog.posts = [
             ...this.state.posts,
-            ...data.posts as Post[],
+            ...data,
         ];
     },
 
@@ -38,4 +36,4 @@ export const simpleStore = ((initialState: State) => ({
 
         target.dislikes += 1;
     }
-}))(cloneDeep(window.__INITIAL_STATE__))
+}))(cloneDeep(window.__INITIAL_STATE__) as RootState)

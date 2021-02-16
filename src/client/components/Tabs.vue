@@ -18,8 +18,8 @@
 <script lang="ts">
     import Vue from 'vue';
     import Component from 'vue-class-component';
-    import Tab from 'components/Tab.vue';
-    import { definePersistentVar } from 'helpers/persistent-var';
+    import Tab from '@components/Tab.vue';
+    import { definePersistentVar } from '@helpers/persistent-var';
 
     const activeTabIndex = definePersistentVar<number>('active-tab-index');
 

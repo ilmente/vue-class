@@ -10,13 +10,14 @@
 
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
-    import { Post } from 'typings/post';
-    import { netlify } from 'helpers/network-provider';
-    import { eventBus } from 'helpers/event-bus';
+    import { Post } from '@typings/blog';
+    import { netlify } from '@helpers/network-provider';
+    import { eventBus } from '@helpers/event-bus';
     import cloneDeep from 'lodash/cloneDeep'; 
     import reduce from 'lodash/reduce';
     import PostCard from './PostCard.vue';
     import DislikeButton from './DislikeButton.vue';
+import { AxiosResponse } from 'axios';
 
     @Component({
         name: 'UseLocalState',
@@ -45,13 +46,13 @@
         }
 
         async loadLivePosts(): Promise<void> {
-            const { data } = await netlify({
+            const { data }: AxiosResponse<Post[]> = await netlify({
                 url: '/posts'
             });
 
             this.posts = [
                 ...this.posts,
-                ...data.posts as Post[],
+                ...data,
             ];
 
             eventBus.emit('local-state-dislike', this.totalDislikes);

@@ -7,7 +7,7 @@
 <script lang="ts">
     import Vue, { PropOptions } from 'vue';
     import Component, { mixins } from 'vue-class-component';
-    import Tabs from 'components/Tabs.vue';
+    import Tabs from '@components/Tabs.vue';
 
     const TabProps = Vue.extend({
         props: {
