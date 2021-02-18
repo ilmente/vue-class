@@ -10,10 +10,11 @@
 
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
-    import { State, Action, Mutation } from 'vuex-class';
+    import { State, Action } from 'vuex-class';
     import { Post } from './typings/Post';
     import PostCard from './PostCard.vue';
     import DislikeButton from './DislikeButton.vue';
+    import { RootState } from './typings/RootState';
 
     @Component({
         name: 'UseLocalState',
@@ -23,9 +24,9 @@
         }
     })
     export default class extends Vue {
-        @State(state => state.posts) posts!: Post[];
-        @Mutation('INCREASE_POST_DISLIKES') increasePostDislikes!: Function;
+        @State((state: RootState) => state.posts) posts!: Post[];
         @Action loadLivePosts!: Function;
+        @Action increasePostDislikes!: Function;
 
         async mounted(): Promise<void> {
             await this.loadLivePosts();
