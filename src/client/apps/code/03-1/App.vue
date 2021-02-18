@@ -1,16 +1,15 @@
 <template>
     <Layout>
-        <div class="content">
-            <h3>Dislikes count</h3>
-            <ul>
-                <li>Local state: <strong>{{localStateCount}}</strong></li>
-                <li>Simple store: <strong>{{getSimpleStoreCount()}}</strong></li>
-                <li>Vuex store: <strong>{{totalDislikes}}</strong></li>
-            </ul>
-        </div>
+        <h4 class="title is-4">Dislikes count</h4>
+        <ul>
+            <li>Local state: <strong>{{localStateCount}}</strong></li>
+            <li>Simple store: <strong>{{getSimpleStoreCount()}}</strong></li>
+            <li>Vuex store: <strong>{{totalDislikes}}</strong></li>
+        </ul>
 
         <hr>
-        <h3>Apps</h3>
+
+        <h4 class="title is-4">Apps</h4>
         <Tabs>
             <Tab label="Local state 🤨" isActive>
                 <UseLocalState />

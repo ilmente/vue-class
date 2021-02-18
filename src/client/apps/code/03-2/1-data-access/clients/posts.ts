@@ -5,7 +5,8 @@ import { AxiosResponse } from 'axios';
 export const getPosts = async (): Promise<Post[]> => {
     try {
         const { data }: AxiosResponse<Post[]> = await netlify({
-            url: '/posts'
+            url: '/posts-32',
+            method: 'GET',
         });
 
         return data;
@@ -15,9 +16,13 @@ export const getPosts = async (): Promise<Post[]> => {
     }
 }
 
-export const updatePost = async (post: Post): Promise<Post> => {
-    /**
-     * fake method to update the post
-     */
-    return Promise.resolve(post);
+export const updatePost = async (id: string, dislikes: number): Promise<void> => {
+    await netlify({
+        url: '/posts-32',
+        method: 'PATCH',
+        data: {
+            id, 
+            dislikes,
+        }
+    });
 }

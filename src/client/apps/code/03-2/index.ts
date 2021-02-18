@@ -1,6 +1,8 @@
-// import { State } from '@typings/InitialState';
-// import { bootstrap } from '@helpers/bootstrap';
-// import { store } from './3-connection/store';
-// import App from './4-presentation/App.vue';
+import { bootstrap } from '@helpers/bootstrap';
+import { RootState } from './3-connection/RootState';
+import { hydrateStore } from './3-connection/Store';
+import App from './4-presentation/App.vue';
 
-// bootstrap<State>(App, store);
+const store = hydrateStore(window.__INITIAL_STATE__);
+
+bootstrap<RootState>(App, store);

@@ -48,7 +48,7 @@ export const vuexStore: Store<RootState> = new Vuex.Store({
     actions: {
         async loadLivePosts({ commit }): Promise<void> {
             const { data }: AxiosResponse<Post[]> = await netlify({
-                url: '/posts'
+                url: '/posts-31'
             });
 
             commit('SET_POSTS', data);

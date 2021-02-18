@@ -18,7 +18,7 @@ export const simpleStore = ((state: RootState) => ({
 
     async loadLivePosts(): Promise<void> {
         const { data }: AxiosResponse<Post[]> = await netlify({
-            url: '/posts'
+            url: '/posts-31'
         });
 
         this.state.posts = [

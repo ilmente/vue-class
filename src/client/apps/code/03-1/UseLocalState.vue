@@ -27,7 +27,7 @@
         }
     })
     export default class extends Vue {
-        posts: Post[] = cloneDeep(window.__INITIAL_STATE__.posts) || [];
+        posts: Post[] = cloneDeep(window.__INITIAL_STATE__.posts);
 
         get totalDislikes(): number {
             return reduce(

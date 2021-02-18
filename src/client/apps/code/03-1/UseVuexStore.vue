@@ -23,7 +23,7 @@
         }
     })
     export default class extends Vue {
-        @State(state => state.blog.posts) posts!: Post[];
+        @State(state => state.posts) posts!: Post[];
         @Mutation('INCREASE_POST_DISLIKES') increasePostDislikes!: Function;
         @Action loadLivePosts!: Function;
 
