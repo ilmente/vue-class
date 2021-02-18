@@ -55,7 +55,7 @@
             await this.$store.dispatch('blog/increasePostDislikes', { id });
         }
 
-        async created(): Promise<void> {
+        async mounted(): Promise<void> {
             await this.$store.dispatch('blog/loadPosts');
         }
     }
