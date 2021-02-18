@@ -4,7 +4,7 @@ paginate: true
 theme: default
 ---
 
-# State management & data flow
+# State management & application data flow
 
 From local state management using data, to application state management using Vuex store.
 
@@ -93,7 +93,7 @@ From local state management using data, to application state management using Vu
 
 # The store pattern
 
-- (state management) => [[docs]](https://vuejs.org/v2/guide/state-management.htmlhttps://vuejs.org/v2/guide/state-management.html)
+- (vue state management) => [[docs]](https://vuejs.org/v2/guide/state-management.htmlhttps://vuejs.org/v2/guide/state-management.html)
 - (flux architecture) => [[docs]](https://facebook.github.io/flux/)
 - (redux architecture) => [[docs]](https://redux.js.org/)
 
@@ -102,7 +102,7 @@ From local state management using data, to application state management using Vu
 ## So...
 
 > [...] why don't we **extract the shared state out of the components, and manage it in a global singleton?** With this, our component tree becomes a big "view", and any component can access the state or trigger actions, no matter where they are in the tree!
-> By defining and **separating the concepts** involved in state management and enforcing rules that maintain independence between views and states, we give our code more structure and maintainability.
+> By defining and **separating the concepts** involved in state management and enforcing rules that **maintain independence between views and states**, we give our code more structure and maintainability.
 [Vuex](https://vuex.vuejs.org/) 
 
 ---
@@ -120,11 +120,11 @@ From local state management using data, to application state management using Vu
 - **store**
     - holds the application data
     - manages the application state
-    - receives actions
+    - defines and "receives" actions
 - **state**
     - defined by data
     - represents the application behaviour at any specific moment in time
-    - mutates by responding to an action
+    - *mutates* by responding to an action
 - **action**
     - *triggers* a *mutation* in the state
     - defines the application internal API
@@ -222,8 +222,8 @@ From local state management using data, to application state management using Vu
 > [Vuex actions docs](https://vuex.vuejs.org/guide/actions.html)
 
 #
-- must be *dispatched*
-- can me sync or async
+- can be *dispatched* or called directly
+- can be sync or async
 
 ---
 

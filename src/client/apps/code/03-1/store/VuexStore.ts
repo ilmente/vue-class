@@ -24,14 +24,11 @@ export const vuexStore: Store<RootState> = new Vuex.Store({
             ];
         },
 
-        INCREASE_POST_DISLIKES(state: RootState, { id }) {
-            const target = state.posts.find((post: Post) => post.id === id);
-
-            if (!target) {
-                return;
-            }
-
-            target.dislikes += 1;
+        INCREASE_POST_DISLIKES(state: RootState, post: Post) {
+            /**
+             * this is not ideal...
+             */
+            post.dislikes += 1;
         }
     },
 
@@ -52,6 +49,16 @@ export const vuexStore: Store<RootState> = new Vuex.Store({
             });
 
             commit('SET_POSTS', data);
+        },
+
+        increasePostDislikes({ state, commit }, { id }): void {
+            const target = state.posts.find((post: Post) => post.id === id);
+
+            if (!target) {
+                return;
+            }
+
+            commit('INCREASE_POST_DISLIKES', target);
         },
     },
 });

@@ -25,7 +25,7 @@ exports.handler = async () => {
 
     
     const delay = async () => new Promise(
-        (resolve) => setTimeout(resolve, count * 300)
+        (resolve) => setTimeout(resolve, count * 150)
     );
 
     await delay();

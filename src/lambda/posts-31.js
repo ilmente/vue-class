@@ -17,7 +17,7 @@ exports.handler = async () => {
     const posts = generatePosts(3);
 
     const delay = async () => new Promise(
-        (resolve) => setTimeout(resolve, 3 * 1000)
+        (resolve) => setTimeout(resolve, 2000)
     );
 
     await delay();
