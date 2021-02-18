@@ -254,14 +254,14 @@ A brief introduction to layered applications
 
 ## Layers
 
-- data access (aka *persistent*)
-    - where your data is stored and managed
-- business
-    - where your data is restructured, manipulated, computed and/or aggregated
-- connection
-    - where your data is used to define the application state
-- presentation
-    - where UI is rendered depending on your data
+1. **data access (aka *persistent*)**
+    - data is stored (CRUD)
+2. **business**
+    - data is restructured, manipulated, computed and/or aggregated
+3. **connection (aka *service* or *application*)**
+    - data becomes application state
+4. **presentation**
+    - UI
 
 ---
 
