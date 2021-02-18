@@ -85,9 +85,9 @@
 
 <script lang="ts">
     import Vue, { PropOptions } from 'vue';
-    import Logo from 'components/Logo.vue';
-    import { NavigationItem } from 'typings/Navigation';
-    import { Platform } from 'typings/State';
+    import Logo from '@components/Logo.vue';
+    import { NavigationItem } from '@typings/Navigation';
+    import { Platform } from '@typings/InitialState';
 
     export default Vue.extend({
         components: {

@@ -13,7 +13,7 @@
 
 <script lang="ts">
     import { Vue, Component, Prop } from 'vue-property-decorator';
-    import { LogMethod } from 'decorators/log';
+    import { LogMethod } from '@decorators/log';
 
     @Component({
         name: 'DeepDiveChildSuper',

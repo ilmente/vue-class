@@ -1,5 +1,6 @@
+const faker = require('faker');
+
 exports.handler = async () => {
-    const faker = require('faker');
     const count = Math.ceil(Math.random() * 10);
 
     if (count < 3) {

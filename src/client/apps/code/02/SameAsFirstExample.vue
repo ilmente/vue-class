@@ -71,7 +71,7 @@
 
 <script lang="ts">
     import { Vue, Component, Prop } from 'vue-property-decorator';
-    import { LogComputed, LogMethod } from 'decorators/log';
+    import { LogComputed, LogMethod } from '@decorators/log';
 
     @Component({
         name: 'SameAsFirstExample',

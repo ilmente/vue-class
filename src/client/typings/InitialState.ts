@@ -5,8 +5,8 @@ export interface Platform {
     build: number;
 }
 
-export interface State {
+export interface InitialState {
     platform: Platform;
     navigation: Navigation;
-    [key: string]: unknown;
+    [key: string]: any;
 }

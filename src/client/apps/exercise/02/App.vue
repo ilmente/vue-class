@@ -39,7 +39,7 @@
             can access the `comments` service just by doing:
             
             ```
-            | import { netlify } from 'helpers/network-provider';
+            | import { netlify } from '@helpers/network-provider';
             | ...
             | await netlify({ url: '/comments' });
             ```

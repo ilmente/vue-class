@@ -21,11 +21,10 @@
             "dom"
         ],
         "paths": {
-            "src/": ["src/*"],
-            "components/*": ["src/client/components/*"],
-            "helpers/*": ["src/client/helpers/*"],
-            "decorators/*": ["src/client/decorators/*"],
-            "typings/*": ["src/client/typings/*"]
+            "@components/*": ["src/client/components/*"],
+            "@helpers/*": ["src/client/helpers/*"],
+            "@decorators/*": ["src/client/decorators/*"],
+            "@typings/*": ["src/client/typings/*"]
         }
     },
     "files": [
@@ -37,9 +36,12 @@
         "src/client/**/*.vue"
     ],
     "exclude": [
+        ".vscode",
         "node_modules",
         "docs",
         "public",
-        "src/client/pages/code-examples/01/*.vue"
+        "assets",
+        "netlify",
+        "src/client/apps/code/01/*.vue"
     ]
 }
