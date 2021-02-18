@@ -47,7 +47,7 @@
 
         async loadLivePosts(): Promise<void> {
             const { data }: AxiosResponse<Post[]> = await netlify({
-                url: '/posts'
+                url: '/posts-31'
             });
 
             this.posts = [
