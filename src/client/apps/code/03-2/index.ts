@@ -5,4 +5,4 @@ import App from './4-presentation/App.vue';
 
 const store = hydrateStore(window.__INITIAL_STATE__);
 
-bootstrap<RootState>(App, store);
+bootstrap<RootState>(App, { store });

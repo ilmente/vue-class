@@ -1,5 +1,7 @@
 <template>
     <Layout>
+        <DataViewer />
+        
         <Markdown>
             # Todo
 
