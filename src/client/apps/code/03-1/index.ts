@@ -3,4 +3,4 @@ import { vuexStore } from './store/VuexStore';
 import { RootState } from './typings/RootState';
 import App from './App.vue';
 
-bootstrap<RootState>(App, vuexStore);
+bootstrap<RootState>(App, { store: vuexStore });

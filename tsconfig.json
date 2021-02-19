@@ -11,7 +11,7 @@
         "module": "esnext",
         "moduleResolution": "node",
         "esModuleInterop": true,
-        "strictPropertyInitialization": true,
+        "strictPropertyInitialization": false,
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
         "resolveJsonModule": true,

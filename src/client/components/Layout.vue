@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <header class="container is-max-desktop">
+    <div class="layout">
+        <header class="layout__header container is-max-desktop">
             <nav class="navbar" role="navigation">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="/"><Logo /></a>
@@ -55,13 +55,13 @@
             </div>
         </section>
 
-        <main class="container is-max-desktop">
+        <main class="layout__main container is-max-desktop">
             <div class="my-5" :class="contentStyle && 'content'">
                 <slot v-bind="item"></slot>
             </div>
         </main>
 
-        <footer class="footer">
+        <footer class="layout__footer footer is-align-self-baseline">
             <div class="content has-text-centered">
                 <h6>🖥 Vue Class</h6>
                 <p>
@@ -81,6 +81,31 @@
 <style lang="scss">
     @import 'variables';
     @import 'bulma';
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    .layout {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+
+        &__header {
+            flex-grow: 0;
+            width: 100%;
+        }
+
+        &__main {
+            width: 100%;
+        }
+
+        &__footer {
+            flex-grow: 0;
+            width: 100%;
+        }
+    }
 </style>
 
 <script lang="ts">
