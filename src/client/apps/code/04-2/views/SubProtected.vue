@@ -1,6 +1,12 @@
 <template>
     <section class="content">
-        <h2>Home page</h2>
+        <hr>
+        <h3>Some protected subview</h3>
+        <p>
+            You can only see this page if you're logged in.
+            <br>
+            <router-link to="/logout">Logout</router-link>
+        </p>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 

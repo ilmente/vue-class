@@ -1,6 +1,7 @@
 <template>
     <section class="content">
-        <h2>Home page</h2>
+        <hr>
+        <h3>Some public subview</h3>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 

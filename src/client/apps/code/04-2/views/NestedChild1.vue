@@ -1,0 +1,29 @@
+<template>
+    <section class="content">
+        <hr>
+        <h3>Nested child view 1</h3>
+        <p>
+            Called on {{date}}
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat.
+        </p>
+    </section>
+</template>
+
+<script lang="ts">
+    import { Vue, Component } from 'vue-property-decorator';
+
+    @Component({
+        name: 'NestedChild1',
+    })
+    export default class extends Vue {
+        get date(): string {
+            const date = parseInt(this.$route.params.date);
+            return new Date(date).toString();
+        }
+    }
+</script>

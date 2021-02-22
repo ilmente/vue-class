@@ -23,6 +23,7 @@
         "paths": {
             "@components/*": ["src/client/components/*"],
             "@helpers/*": ["src/client/helpers/*"],
+            "@mixins/*": ["src/client/mixins/*"],
             "@decorators/*": ["src/client/decorators/*"],
             "@typings/*": ["src/client/typings/*"]
         }
