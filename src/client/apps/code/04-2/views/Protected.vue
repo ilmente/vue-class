@@ -1,6 +1,6 @@
 <template>
     <section class="content">
-        <h2>Protected page</h2>
+        <h2>🔒 Protected page</h2>
         <p>
             You can only see this page if you're logged in.
             <br>

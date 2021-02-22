@@ -3,7 +3,7 @@
         <hr>
         <h3>Nested child view 1</h3>
         <p>
-            Called on {{date}}
+            Called on <strong>{{date}}</strong>
         </p>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, 

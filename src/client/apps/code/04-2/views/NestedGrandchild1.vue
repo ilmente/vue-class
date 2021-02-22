@@ -3,7 +3,7 @@
         <hr>
         <h4>Nested grandchild view 2.1</h4>
         <p>
-            Called on {{date}}
+            Called on <strong>{{date}}</strong>
         </p>
         <p v-for="index in 3" :key="`lorem-${index}`">
             Lorem ipsum dolor sit amet, consectetur

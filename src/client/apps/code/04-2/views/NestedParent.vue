@@ -1,7 +1,7 @@
 <template>
     <section class="content">
         <h2>Nested parent page</h2>
-        <p>Called on {{date}}</p>
+        <p>Called on <strong>{{date}}</strong></p>
 
         <blockquote>
             This is a parent view. You can display children below.

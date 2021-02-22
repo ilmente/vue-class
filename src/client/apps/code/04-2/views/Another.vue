@@ -2,7 +2,7 @@
     <section class="content">
         <h2>Another page</h2>
         <p>
-            Called on <em>{{date}}</em>
+            Called on <strong>{{date}}</strong>
         </p>
         <p>
             Sed ut perspiciatis unde omnis iste natus error sit 

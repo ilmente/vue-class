@@ -1,7 +1,7 @@
 <template>
     <section class="content">
         <hr>
-        <h3>Some protected subview</h3>
+        <h3>🔒 Some protected subview</h3>
         <p>
             You can only see this page if you're logged in.
             <br>

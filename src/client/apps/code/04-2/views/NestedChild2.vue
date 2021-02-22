@@ -3,7 +3,10 @@
         <hr>
         <h3>Nested child view 2</h3>
         <p>
-            Called on {{date}}
+            Called on <strong>{{date}}</strong>
+        </p>
+        <p>
+            😀 😃 😄 😁 😆 😅 😂
         </p>
         <router-view></router-view>
     </section>
