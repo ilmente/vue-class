@@ -42,7 +42,7 @@
         prevHeight: string = '0';
 
         get date(): string {
-            const date = parseInt(this.$route.params.date);
+            const date = parseInt(this.$route.params.timestamp);
             return new Date(date).toString();
         }
 

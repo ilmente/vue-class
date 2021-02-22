@@ -5,12 +5,11 @@
         <p>
             Called on <strong>{{date}}</strong>
         </p>
-        <p v-for="index in 3" :key="`lorem-${index}`">
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit lorem ipsum dolor. 
-            Pellentesque risus mi, 
-            tempus quis placerat ut, porta nec nulla. 
-            Vestibulum rhoncus ac ex sit amet fringilla.
+        <p v-for="index in 10" :key="`lorem-${index}`">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat.
         </p>
     </section>
 </template>
@@ -23,7 +22,7 @@
     })
     export default class extends Vue {
         get date(): string {
-            const date = parseInt(this.$route.params.date);
+            const date = parseInt(this.$route.params.timestamp);
             return new Date(date).toString();
         }
     }

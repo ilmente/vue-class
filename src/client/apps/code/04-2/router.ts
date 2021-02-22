@@ -7,6 +7,7 @@ import NestedParent from './views/NestedParent.vue';
 import NestedChild1 from './views/NestedChild1.vue';
 import NestedChild2 from './views/NestedChild2.vue';
 import NestedGrandchild2 from './views/NestedGrandchild2.vue';
+import NestedGrandchild3 from './views/NestedGrandchild3.vue';
 import Protected from './views/Protected.vue';
 import PartiallyProtected from './views/PartiallyProtected.vue';
 import Sub from './views/Sub.vue';
@@ -19,17 +20,20 @@ const routes = [
     },
     { 
         name: 'another', 
-        path: '/another/:date', 
+        path: '/another/:timestamp', 
         component: Another 
     },
     { 
         name: 'parent', 
-        path: '/nested-parent/:date', 
+        path: '/nested-parent/:timestamp', 
         component: NestedParent,
         children: [
             {
                 path: 'nested-child-1',
-                component: NestedChild1
+                component: NestedChild1,
+                props: (route: Route) => ({
+                    timestamp: route.params.timestamp
+                })
             },
             {
                 name: 'child-2',
@@ -46,6 +50,11 @@ const routes = [
                         path: 'nested-grandchild-2',
                         component: NestedGrandchild2,
                     },
+                    {
+                        name: 'grandchild-3',
+                        path: 'nested-grandchild-3',
+                        component: NestedGrandchild3,
+                    },
                 ]
             },
         ],
@@ -60,7 +69,7 @@ const routes = [
         path: '/logout',
         beforeEnter: (to: Route, from: Route, next: NavigationGuardNext): void => {
             signOut();
-            next({ path: '/login' });
+            next({ path: 'login' });
         }
     },
     {
@@ -93,6 +102,20 @@ const routes = [
 
 export const router = new Router({
     routes,
+
+    // mode: 'history',
+    // base: '/code/04-2/',
+    
+    linkActiveClass: 'is-parent',
+    linkExactActiveClass: 'is-active',
+    
+    scrollBehavior(to, from, savedPosition) {
+        return {
+            x: 0,
+            y: 0,
+            behavior: 'smooth',
+        }
+    }
 });
 
 router.beforeEach((to: Route, from: Route, next: NavigationGuardNext): void => {

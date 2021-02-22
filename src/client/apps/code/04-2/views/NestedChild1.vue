@@ -15,14 +15,16 @@
 </template>
 
 <script lang="ts">
-    import { Vue, Component } from 'vue-property-decorator';
+    import { Vue, Component, Prop } from 'vue-property-decorator';
 
     @Component({
         name: 'NestedChild1',
     })
     export default class extends Vue {
+        @Prop() timestamp!: string;
+
         get date(): string {
-            const date = parseInt(this.$route.params.date);
+            const date = parseInt(this.timestamp);
             return new Date(date).toString();
         }
     }

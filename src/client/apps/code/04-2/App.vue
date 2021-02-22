@@ -1,6 +1,5 @@
 <template>
     <Layout>
-        <AAA />
         <div class="columns">
             <div class="column is-one-quarter">
                 <aside class="menu">
@@ -14,7 +13,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link :to="{ name: 'another', params: { date: Date.now() }}">
+                            <router-link :to="{ name: 'another', params: { timestamp: Date.now() }}">
                                 Another page
                             </router-link>
                         </li>
@@ -24,33 +23,43 @@
                     </p>
                     <ul class="menu-list">
                         <li>
-                            <router-link :to="{ name: 'parent', params: { date: Date.now() } }">
-                                Parent only (fade)
+                            <router-link :to="{ name: 'parent', params: { timestamp: Date.now() } }">
+                                Parent only 
+                                <small><em>(Fade)</em></small>
                             </router-link>
                         </li>
                         <li>
                             <router-link :to="`/nested-parent/${Date.now()}/nested-child-1`">
-                                Child 1 (fade)
+                                Child 1
+                                <small><em>(Fade, Props)</em></small>
                             </router-link>
                         </li>
                         <li>
-                            <router-link :to="{ name: 'child-2', params: { date: Date.now() } }">
-                                Child 2 (fade)
+                            <router-link :to="{ name: 'child-2', params: { timestamp: Date.now() } }">
+                                Child 2
+                                <small><em>(Fade)</em></small>
                             </router-link>
                         </li>
                         <li>
-                            <router-link :to="{ name: 'grandchild-1', params: { date: Date.now() } }">
+                            <router-link :to="{ name: 'grandchild-1', params: { timestamp: Date.now() } }">
                                 Grandchild 1
+                                <small><em>(Lazy, Scroll)</em></small>
                             </router-link>
                         </li>
                         <li>
-                            <router-link :to="{ name: 'grandchild-2', params: { date: Date.now() } }">
+                            <router-link :to="{ name: 'grandchild-2', params: { timestamp: Date.now() } }">
                                 Grandchild 2
+                                <small><em>(Scroll)</em></small>
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{ name: 'grandchild-3', params: { timestamp: Date.now() } }">
+                                Grandchild 3
                             </router-link>
                         </li>
                     </ul>
                     <p class="menu-label">
-                        Navigation guards + meta
+                        Navigation guards
                     </p>
                     <ul class="menu-list">
                         <li>
@@ -77,3 +86,9 @@
         </div>
     </Layout>
 </template>
+
+<style lang="scss">
+.router-link-active {
+    color:red;
+}
+</style>
