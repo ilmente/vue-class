@@ -29,7 +29,7 @@ From hash state to Vue Router integration and usage.
 [Me]()
 
 ## Routing
-> The process of recognition of a location and the subsequesnt capability of sending specific information to it.
+> The process of recognition of a location and the subsequent capability of sending specific information to it.
 [Again, me]()
 
 ---
@@ -40,6 +40,7 @@ From hash state to Vue Router integration and usage.
 - final part of a *url* or *path*
 - anything *after* the hash is ignored by the server
 - hash can be used as *state*
+- hash is part of the browser history
 
 ---
 
@@ -58,7 +59,7 @@ From hash state to Vue Router integration and usage.
 ---
 
 - **dynamic routes**
-routed with dynamic parameters as part of the path
+routes with dynamic parameters as part of the path
 - **nested routes** 
 subroutes, subcomponents
 - **passing props to route components**

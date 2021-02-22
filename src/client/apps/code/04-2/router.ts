@@ -12,6 +12,7 @@ import Protected from './views/Protected.vue';
 import PartiallyProtected from './views/PartiallyProtected.vue';
 import Sub from './views/Sub.vue';
 import SubProtected from './views/SubProtected.vue';
+import { Position } from 'vue-router/types/router';
 
 const routes = [
     { 
@@ -20,7 +21,7 @@ const routes = [
     },
     { 
         name: 'another', 
-        path: '/another/:timestamp', 
+        path: '/another/:timestamp',
         component: Another 
     },
     { 
@@ -103,13 +104,17 @@ const routes = [
 export const router = new Router({
     routes,
 
+    /**
+     * to enable html5 history mode
+     * uncomment the 2 lines below
+     */
     // mode: 'history',
     // base: '/code/04-2/',
     
     linkActiveClass: 'is-parent',
     linkExactActiveClass: 'is-active',
     
-    scrollBehavior(to, from, savedPosition) {
+    scrollBehavior(to: Route, from: Route, savedPosition: void | Position) {
         return {
             x: 0,
             y: 0,
