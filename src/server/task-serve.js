@@ -19,17 +19,25 @@ app.use(netlify.endpoint, proxy(`localhost:${netlify.port}${netlify.endpoint}`, 
 
 resources
     .map(log)
-    .map(resource => app.get(resource.url, (req, res, next) => {
-        try {
-            const html = render(resource);
+    .forEach(resource => {
+        const handler = (req, res, next) => {
+            try {
+                const html = render(resource);
 
-            return res
-                .header('Content-Type', 'text/html')
-                .send(html);
-        } catch (error) {
-            next(error);
+                return res
+                    .header('Content-Type', 'text/html')
+                    .send(html);
+            } catch (error) {
+                next(error);
+            }
         }
-    }));
+
+        app.get(resource.url, handler);
+
+        if (resource.meta.html5Routing) {
+            app.get(`${resource.url}/*`, handler);
+        }
+    });
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
