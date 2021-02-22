@@ -29,7 +29,7 @@ From hash state to Vue Router integration and usage.
 [Me]()
 
 ## Routing
-> The process of recognition of a location and the subsequesnt capability of sending specific information to it.
+> The process of recognition of a location and the subsequent capability of sending specific information to it.
 [Again, me]()
 
 ---
@@ -40,6 +40,7 @@ From hash state to Vue Router integration and usage.
 - final part of a *url* or *path*
 - anything *after* the hash is ignored by the server
 - hash can be used as *state*
+- hash is part of the browser history
 
 ---
 
@@ -58,7 +59,7 @@ From hash state to Vue Router integration and usage.
 ---
 
 - **dynamic routes**
-routed with dynamic parameters as part of the path
+routes with dynamic parameters as part of the path
 - **nested routes** 
 subroutes, subcomponents
 - **passing props to route components**
@@ -98,22 +99,22 @@ no `#` hash in the url anymore
 ---
 
 ### Lifecycle [from `/` to `/contact`]
->- `beforeRouteLeave` — called on the `/` route component
->- `beforeEach` — called globally when a new navigation starts
->- `beforeEnter` — called when `/contact` route matches
->- `beforeRouteEnter` — called when `/contact` route component matches
->- `beforeResolve` — called globally when route component guards are done- 
->- `afterEach` — called globally when everything is resolved
+>- `beforeRouteLeave` - called on the `/` route component
+>- `beforeEach` - called globally when a new navigation starts
+>- `beforeEnter` - called when `/contact` route matches
+>- `beforeRouteEnter` - called when `/contact` route component matches
+>- `beforeResolve` - called globally when route component guards are done
+>- `afterEach` - called globally when everything is resolved
 >
 >[itnext.io](https://itnext.io/yes-this-is-how-vue-router-guards-work-when-to-use-them-ed7e34946211)
 
 --- 
 
 ### Lifecycle [from `/page/1` to `/page/2`]:
->- `beforeEach` — called globally when a new navigation starts
->- `beforeRouteUpdate` — called on the route component when it’s reused
->- `beforeResolve` — called globally when route component guards are done
->- `afterEach` — called globally when everything is resolved
+>- `beforeEach` - called globally when a new navigation starts
+>- `beforeRouteUpdate` - called on the route component when it’s reused
+>- `beforeResolve` - called globally when route component guards are done
+>- `afterEach` - called globally when everything is resolved
 >
 >[itnext.io](https://itnext.io/yes-this-is-how-vue-router-guards-work-when-to-use-them-ed7e34946211)
 
