@@ -99,22 +99,22 @@ no `#` hash in the url anymore
 ---
 
 ### Lifecycle [from `/` to `/contact`]
->- `beforeRouteLeave` — called on the `/` route component
->- `beforeEach` — called globally when a new navigation starts
->- `beforeEnter` — called when `/contact` route matches
->- `beforeRouteEnter` — called when `/contact` route component matches
->- `beforeResolve` — called globally when route component guards are done- 
->- `afterEach` — called globally when everything is resolved
+>- `beforeRouteLeave` - called on the `/` route component
+>- `beforeEach` - called globally when a new navigation starts
+>- `beforeEnter` - called when `/contact` route matches
+>- `beforeRouteEnter` - called when `/contact` route component matches
+>- `beforeResolve` - called globally when route component guards are done
+>- `afterEach` - called globally when everything is resolved
 >
 >[itnext.io](https://itnext.io/yes-this-is-how-vue-router-guards-work-when-to-use-them-ed7e34946211)
 
 --- 
 
 ### Lifecycle [from `/page/1` to `/page/2`]:
->- `beforeEach` — called globally when a new navigation starts
->- `beforeRouteUpdate` — called on the route component when it’s reused
->- `beforeResolve` — called globally when route component guards are done
->- `afterEach` — called globally when everything is resolved
+>- `beforeEach` - called globally when a new navigation starts
+>- `beforeRouteUpdate` - called on the route component when it’s reused
+>- `beforeResolve` - called globally when route component guards are done
+>- `afterEach` - called globally when everything is resolved
 >
 >[itnext.io](https://itnext.io/yes-this-is-how-vue-router-guards-work-when-to-use-them-ed7e34946211)
 
