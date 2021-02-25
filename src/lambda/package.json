@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "faker": "~5.4.0"
+    "faker": "~5.4.0",
+    "lodash": "~4.17.21"
   }
 }

@@ -86,9 +86,3 @@
         </div>
     </Layout>
 </template>
-
-<style lang="scss">
-.router-link-active {
-    color:red;
-}
-</style>

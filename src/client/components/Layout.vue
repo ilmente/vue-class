@@ -55,7 +55,7 @@
             </div>
         </section>
 
-        <main class="layout__main container is-max-desktop">
+        <main class="layout__main container" :class="fullWidth ? 'is-fullhd' : 'is-max-desktop'">
             <div class="my-5" :class="contentStyle && 'content'">
                 <slot v-bind="item"></slot>
             </div>
@@ -123,7 +123,12 @@
             contentStyle: {
                 type: Boolean,
                 default: false,
-            } as PropOptions<boolean>
+            } as PropOptions<boolean>,
+
+            fullWidth: {
+                type: Boolean,
+                default: false,
+            } as PropOptions<boolean>,
         },
 
         data() {
