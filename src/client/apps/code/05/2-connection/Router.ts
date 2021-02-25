@@ -109,8 +109,8 @@ export const router = new Router({
      * to enable html5 history mode
      * uncomment the 2 lines below
      */
-    mode: 'history',
-    base: '/code/05/',
+    // mode: 'history',
+    // base: '/code/05/',
 });
 
 router.beforeEach(async (to: Route, from: Route, next: NavigationGuardNext): Promise < void> => {
