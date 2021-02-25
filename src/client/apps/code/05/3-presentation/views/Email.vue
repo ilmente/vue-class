@@ -103,11 +103,14 @@
 
         async onStatusChange(status: EmailStatus): Promise<void> {
             this.clearAutoUpdateStatus();
+            
             await this.updateStatus(status);
         }
 
         @Watch('$route')
         async onRouteChange(): Promise<void> {
+            this.clearAutoUpdateStatus();
+
             await this.$store.dispatch('email/load', this.emailId);
             await this.autoUpdateStatus();
         }

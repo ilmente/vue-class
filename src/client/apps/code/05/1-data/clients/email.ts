@@ -33,7 +33,7 @@ export const getEmail = async (id: string): Promise<Email> => {
     }
 }
 
-export const updateEmailStatus = async (id: string, status: typeof EmailStatus): Promise<Email> => {
+export const updateEmailStatus = async (id: string, status: EmailStatus): Promise<Email> => {
     try {
         const { data }: AxiosResponse<Email> = await netlify({
             url: '/emails',

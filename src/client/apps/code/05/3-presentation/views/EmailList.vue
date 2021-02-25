@@ -1,6 +1,6 @@
 <template>
     <div class="email-list">
-        <ul>
+        <ul class="email-list__list" :class="isLoading && 'email-list__list--is-loading'">
             <li
                 class="email-list__item"
                 v-for="(info, index) in list" 
@@ -42,6 +42,16 @@
             display: block;
             line-height: 1.3;
         }
+
+        &__list {
+            will-change: opacity;
+            transition: opacity 200ms linear;
+
+            &--is-loading {
+                pointer-events: none;
+                opacity: 0.3;
+            }
+        }
     }
 </style>
 
@@ -66,10 +76,6 @@
 
         get list(): EmailInfo[] {
             return this.$store.getters['emailList/filteredList'];
-        }
-
-        get isSpamOnly(): boolean {
-            return this.$store.state.emailList.isSpamOnly;
         }
 
         get isLoading(): boolean {

@@ -16,6 +16,7 @@ How state management and routing should combine and interact in a scalable appli
     - Data
     - Connection
     - Presentation
+- Visibility and awereness
 - Data flow
 
 ---
@@ -50,6 +51,18 @@ How state management and routing should combine and interact in a scalable appli
 
 ### In other words...
 - it's *shaped by* store and router
+
+---
+
+# Visibility and *awereness*
+
+- visibility increases going from top to bottom
+    - &uarr; 🗄 data
+    - &uarr; ⚙️ connection &rarr; 🗄 data
+        - &uarr; store
+        - &uarr; router &rarr; store
+    - &uarr; 🖼 presentation &rarr; ⚙️ connection &rarr; 🗄 data
+- **do not access layers "below"** 😡
 
 ---
 
