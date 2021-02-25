@@ -89,7 +89,6 @@ const routes = [
         name: RouteName.ERROR,
         path: '/*',
         component: Error,
-        props: () => ({ code: 404 }),
 
         beforeEnter: async (to: Route, from: Route, next: NavigationGuardNext): Promise<void> => {
             store.dispatch('messaging/push', {
@@ -97,7 +96,7 @@ const routes = [
                 type: NotificationType.Danger,
             });
 
-            next();
+            next({ replace: true });
         }
     },
 ]
