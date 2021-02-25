@@ -1,5 +1,5 @@
 import Router, { NavigationGuardNext, Route } from 'vue-router';
-import { isAuthenticated, signOut } from '@helpers/fake-auth';
+import { isAuthenticated, logout } from '@helpers/fake-auth';
 import Home from './views/Home.vue';
 import Login from './views/Login.vue';
 import Another from './views/Another.vue';
@@ -69,7 +69,7 @@ const routes = [
         name: 'logout',
         path: '/logout',
         beforeEnter: (to: Route, from: Route, next: NavigationGuardNext): void => {
-            signOut();
+            logout();
             next({ path: 'login' });
         }
     },
