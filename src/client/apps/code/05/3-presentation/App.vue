@@ -126,7 +126,13 @@
 
         @Watch('isSpamOnly')
         async onSpamOnlyChange(): Promise<void> {
-            this.$store.dispatch('emailList/setSpamOnly', this.isSpamOnly);
+            await this.$store.dispatch('emailList/setSpamOnly', this.isSpamOnly);
+
+            if (this.$route.name === this.RouteName.INBOX) {
+                return;
+            }
+
+            this.$router.replace({ name: this.RouteName.INBOX });
         }
     }
 </script>
