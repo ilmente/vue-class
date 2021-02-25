@@ -1,6 +1,6 @@
 <template>
-    <div class="email-list" ref="emailListContainer">
-        <ul>
+    <div class="email-list">
+        <ul ref="emailListContainer">
             <li
                 class="email-list__item"
                 v-for="(info, index) in list" 

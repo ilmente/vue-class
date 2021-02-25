@@ -9,7 +9,7 @@ import { MessagingModule } from './modules/MessagingModule';
 
 Vue.use(Vuex);
 
-export const vuexStore: Store<RootState> = new Vuex.Store({
+export const store: Store<RootState> = new Vuex.Store({
     strict: true,
 
     modules: {
@@ -21,15 +21,15 @@ export const vuexStore: Store<RootState> = new Vuex.Store({
 
 export function hydrateStore(partialState: Partial<RootState>): Store<RootState> {
     if (!partialState) {
-        return vuexStore;
+        return store;
     }
 
     try {
-        const newState = merge(cloneDeep(vuexStore.state), cloneDeep(partialState));
-        vuexStore.replaceState(newState);
+        const newState = merge(cloneDeep(store.state), cloneDeep(partialState));
+        store.replaceState(newState);
     } catch (error) {
         throw new Error('Store hydration fail');
     }
 
-    return vuexStore;
+    return store;
 }

@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts">
-    import { Vue, Component, Prop, ModelSync } from 'vue-property-decorator';
+    import { Vue, Component, Prop, ModelSync, Watch, Emit } from 'vue-property-decorator';
     import { EmailStatus } from '../../1-data/typings/Email';
     import { getStatusLabel, getStatusModifier } from '../helpers/status';
 
@@ -54,6 +54,7 @@
             return this.status === status;
         }
 
+        @Emit('beforeChange')
         onDropdownClick(): void {
             this.isOpen = !this.isOpen;
         }
@@ -61,6 +62,11 @@
         onDropdownItemClick(status: EmailStatus): void {
             this.isOpen = false;
             this.status = status;
+        }
+
+        @Watch('isUpdating')
+        onUpdating(): void {
+            this.isOpen = false;
         }
     }
 </script>

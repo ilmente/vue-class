@@ -11,6 +11,7 @@
                 class="is-pulled-right"
                 :isUpdating="isUpdating"
                 :value="email.status"  
+                @beforeChange="onStatusBeforeChange"
                 @change="onStatusChange" />
 
             <h1 class="title">{{ email.subject }}</h1>
@@ -76,7 +77,7 @@
         }
 
         get email(): Email | null {
-            if (!this.$store.state.email.current || !this.$store.state.email.current.id) {
+            if (!this.$store.getters['email/exists']) {
                 return null;
             }
             
@@ -88,10 +89,6 @@
         }
 
         get timestamp(): string {
-            if (!this.$store.state.email.current?.timestamp) {
-                return '---'
-            }
-
             return getRelativeDate(this.$store.state.email.current?.timestamp);
         }
 
@@ -100,11 +97,12 @@
             await this.autoUpdateStatus();
         }
 
+        onStatusBeforeChange(): void {
+            this.clearAutoUpdateStatus();
+        }
+
         async onStatusChange(status: EmailStatus): Promise<void> {
-            if (this.timeoutId) {
-                clearTimeout(this.timeoutId);
-            }
-            
+            this.clearAutoUpdateStatus();
             await this.updateStatus(status);
         }
 
@@ -112,6 +110,14 @@
         async onRouteChange(): Promise<void> {
             await this.$store.dispatch('email/load', this.emailId);
             await this.autoUpdateStatus();
+        }
+
+        clearAutoUpdateStatus(): void {
+            if (!this.timeoutId) {
+                return;
+            }
+
+            clearTimeout(this.timeoutId);
         }
 
         async autoUpdateStatus(): Promise<void> {

@@ -20,12 +20,10 @@
                                 </router-link>
                             </p>
                             <p class="control">
-                                <button class="button is-light is-danger">
-                                    <label class="checkbox">
-                                        <input type="checkbox" v-model="isSpamOnly">
-                                        Show only spam
-                                    </label>
-                                </button>
+                                <label class="button checkbox is-light is-danger">
+                                    <input type="checkbox" v-model="isSpamOnly">
+                                    Show only spam
+                                </label>
                             </p>
                             <p class="control">
                                 <router-link 

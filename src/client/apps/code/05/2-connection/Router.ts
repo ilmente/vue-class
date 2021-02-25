@@ -9,6 +9,8 @@ import Email from '../3-presentation/views/Email.vue';
 import SettingList from '../3-presentation/views/SettingList.vue';
 import Setting from '../3-presentation/views/Setting.vue';
 import Error from '../3-presentation/views/Error.vue';
+import { store } from './Store';
+import { NotificationType } from '../1-data/typings/Notification';
 
 Vue.use(Router);
 
@@ -34,8 +36,14 @@ const routes = [
     {
         name: RouteName.LOGOUT,
         path: '/logout',
-        beforeEnter: (to: Route, from: Route, next: NavigationGuardNext): void => {
+        beforeEnter: async (to: Route, from: Route, next: NavigationGuardNext): Promise<void> => {
             logout();
+
+            await store.dispatch('messaging/push', {
+                content: 'You\'re successfully logged out.',
+                type: NotificationType.Success,
+            });
+
             next({ name: RouteName.LOGIN });
         }
     },
@@ -82,6 +90,15 @@ const routes = [
         path: '/*',
         component: Error,
         props: () => ({ code: 404 }),
+
+        beforeEnter: async (to: Route, from: Route, next: NavigationGuardNext): Promise<void> => {
+            store.dispatch('messaging/push', {
+                content: 'Page not found.',
+                type: NotificationType.Danger,
+            });
+
+            next();
+        }
     },
 ]
 
@@ -92,11 +109,11 @@ export const router = new Router({
      * to enable html5 history mode
      * uncomment the 2 lines below
      */
-    // mode: 'history',
-    // base: '/code/05/',
+    mode: 'history',
+    base: '/code/05/',
 });
 
-router.beforeEach((to: Route, from: Route, next: NavigationGuardNext): void => {
+router.beforeEach(async (to: Route, from: Route, next: NavigationGuardNext): Promise < void> => {
     const isProtected = to.matched.some(record => record.meta.protected);
 
     if (!isProtected) {
@@ -108,6 +125,11 @@ router.beforeEach((to: Route, from: Route, next: NavigationGuardNext): void => {
         next();
         return;
     }
+
+    await store.dispatch('messaging/push', { 
+        content: 'You\'re trying to access a protected page: please login first.',
+        type: NotificationType.Warning,
+    });
 
     next({
         name: RouteName.LOGIN,

@@ -16,6 +16,10 @@ export const EmailModule: Module<EmailState, RootState> = {
     },
 
     getters: {
+        exists({ current }: EmailState): boolean {
+            return Boolean(current) && Boolean(current?.id);
+        },
+
         content({ current }: EmailState): string {
             const content = current?.content || '';
 
