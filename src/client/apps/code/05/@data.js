@@ -6,7 +6,7 @@ module.exports = {
     messaging: {
         notifications: [
             {
-                content: 'Welcome to "You\'ve got mail" email client',
+                content: 'Welcome to "You\'ve got mail" client 😎',
             },
         ],
     },

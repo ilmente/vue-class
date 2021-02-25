@@ -1,6 +1,6 @@
 <template>
     <div class="email-list">
-        <ul ref="emailListContainer">
+        <ul>
             <li
                 class="email-list__item"
                 v-for="(info, index) in list" 
@@ -46,7 +46,7 @@
 </style>
 
 <script lang="ts">
-    import { Component, Inject, Watch, Ref } from 'vue-property-decorator';
+    import { Component, Inject } from 'vue-property-decorator';
     import { EmailInfo } from '../../1-data/typings/Email';
     import { RouteNameType } from '../../2-connection/Router';
     import StoreComponent from '../components/StoreComponent';
@@ -63,7 +63,6 @@
     })
     export default class EmailList extends StoreComponent {
         @Inject() readonly RouteName!: RouteNameType;
-        @Ref() emailListContainer!: HTMLDivElement;
 
         get list(): EmailInfo[] {
             return this.$store.getters['emailList/filteredList'];
@@ -79,13 +78,6 @@
 
         async created(): Promise<void> {
             this.$store.dispatch('emailList/loadAll');
-        }
-
-        @Watch('isSpamOnly') 
-        onSpamOnlyChange() {
-            this.emailListContainer.scrollIntoView({ 
-                behavior: 'smooth' 
-            });
         }
     }
 </script>
