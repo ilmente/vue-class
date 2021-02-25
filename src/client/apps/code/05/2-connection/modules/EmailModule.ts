@@ -23,6 +23,10 @@ export const EmailModule: Module<EmailState, RootState> = {
         content({ current }: EmailState): string {
             const content = current?.content || '';
 
+            /**
+             * forgive mother for I have sinned
+             * don't do this EVER
+             */
             return content
                 .split(/\n/)
                 .map((paragraph: string) => `<p>${paragraph}</p>`)

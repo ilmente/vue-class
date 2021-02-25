@@ -100,28 +100,28 @@
 </style>
 
 <script lang="ts">
-    import { Vue, Component, Provide, Watch } from 'vue-property-decorator';
+    import { Component, Provide, Watch } from 'vue-property-decorator';
     import { isAuthenticated } from '@helpers/fake-auth';
     import { RouteName, RouteNameType } from '../2-connection/Router';
     import { Notification as MessagingNotification } from '../1-data/typings/Notification';
     import Notification from './components/Notification.vue';
+    import StoreComponent from './components/StoreComponent';
 
     @Component({
         name: 'App',
         components: {
             Notification,
+        },
+        methods: {
+            isAuthenticated,
         }
     })
-    export default class extends Vue {
+    export default class extends StoreComponent {
         @Provide() RouteName: RouteNameType = RouteName;
         isSpamOnly: boolean = false;
 
         get notifications(): MessagingNotification[] {
             return this.$store.state.messaging.notifications;
-        }
-
-        isAuthenticated(): boolean {
-            return isAuthenticated();
         }
 
         @Watch('isSpamOnly')

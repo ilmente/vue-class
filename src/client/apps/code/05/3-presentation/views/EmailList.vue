@@ -68,10 +68,6 @@
             return this.$store.getters['emailList/filteredList'];
         }
 
-        get isSpamOnly(): boolean {
-            return this.$store.state.emailList.isSpamOnly;
-        }
-
         get isLoading(): boolean {
             return this.$store.state.messaging.isLoading;
         }
