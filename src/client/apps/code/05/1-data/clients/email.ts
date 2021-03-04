@@ -38,10 +38,8 @@ export const updateEmailStatus = async (id: string, status: EmailStatus): Promis
         const { data }: AxiosResponse<Email> = await netlify({
             url: '/emails',
             method: 'PATCH',
-            params: {
-                id,
-            },
             data: {
+                id,
                 status
             }
         });

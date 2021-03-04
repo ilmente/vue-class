@@ -51,9 +51,8 @@
 </style>
 
 <script lang="ts">
-    import { Component, Inject, Prop, Watch } from 'vue-property-decorator';
-    import { Email, EmailStatus } from '../../1-data/typings/Email';
-    import { RouteNameType } from '../../2-connection/Router';
+    import { Component, Prop, Watch } from 'vue-property-decorator';
+    import { Email, EmailStatus } from '../../1-data/typings/Email';;
     import StoreComponent from '../components/StoreComponent';
     import { getRelativeDate } from '../helpers/date';
     import StatusDropdown from '../components/StatusDropdown.vue';
@@ -68,7 +67,6 @@
     })
     export default class extends StoreComponent {
         @Prop({ type: String, required: true }) emailId!: string;
-        @Inject() readonly RouteName!: RouteNameType;
         isUpdating: boolean = false;
         timeoutId: ReturnType<typeof setTimeout> | null = null;
 

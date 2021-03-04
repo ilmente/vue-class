@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification.vue snapshot 1`] = `
+<transition-stub
+  name="fade"
+>
+  <div
+    class="notification is-success"
+    style=""
+  >
+    <button
+      class="delete"
+    />
+     
+    <div
+      class="notification__content"
+    >
+      This is a notification
+    </div>
+  </div>
+</transition-stub>
+`;
