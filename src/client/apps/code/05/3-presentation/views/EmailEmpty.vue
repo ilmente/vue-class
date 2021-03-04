@@ -1,5 +1,5 @@
 <template>
-    <div class="email-empty">
+    <div data-qa-email-empty class="email-empty">
         <span class="email-empty__icon">📬</span>
     </div>
 </template>

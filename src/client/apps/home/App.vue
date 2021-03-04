@@ -9,14 +9,14 @@
 
             ## Code examples
 
-            The code examples are saved in `/src/client/code`.
+            The code examples are saved in `/src/client/apps/code`.
             Dive into these examples code to get a "real world" grasp
             of the tipocs we're talking about during the lessons.
             I'll do my best to keep them updated. 🤓
         
             ## Exercises
 
-            The exercises are saved in `/src/client/exercise`.
+            The exercises are saved in `/src/client/apps/exercise`.
             This is where you come into play: I'll publish reasonable challenges
             here that you can take over in your spare time. 
             Everything is already setup. 
@@ -27,6 +27,8 @@
             yarn build --watch      # watch for client code changes
             yarn serve:lambda       # spin the netlify functions local server
             yarn serve              # spin the dev server
+            # or
+            yarn dev                # run all the above in parallel
             ```
 
             And follow the instructions in the exercise description page.

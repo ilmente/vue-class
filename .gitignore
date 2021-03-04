@@ -13,4 +13,9 @@ yarn-debug.log*
 yarn-error.log*
 
 _*
+!__mocks__
+!__tests__
+!__snapshots__
 src/lambda/yarn.lock
+src/cypress/screenshots
+src/cypress/videos

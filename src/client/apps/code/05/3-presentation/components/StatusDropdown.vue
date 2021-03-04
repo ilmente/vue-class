@@ -2,17 +2,19 @@
     <div class="dropdown is-right" :class="isOpen && 'is-active'">
         <div class="dropdown-trigger">
             <button 
+                data-qa-status-dropdown-button
                 class="button" 
                 :class="getStatusModifier(status)" 
                 @click="onDropdownClick" 
                 :disabled="isUpdating">
                 <span v-if="isUpdating">Updating...</span>
-                <span v-else>{{getStatusLabel(status)}}</span>
+                <span v-else data-qa-status-dropdown-value>{{getStatusLabel(status)}}</span>
             </button>
         </div>
         <div class="dropdown-menu" id="dropdown-menu" role="menu">
             <div class="dropdown-content">
                 <a
+                    data-qa-status-dropdown-option
                     class="dropdown-item" 
                     v-for="(value, index) in statusList" 
                     :key="`status-${index}`"

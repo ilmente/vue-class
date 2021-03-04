@@ -14,7 +14,7 @@ const generateEmails = exports.generateEmails = (count) => new Array(count)
         id: faker.random.uuid(),
         sender: faker.internet.exampleEmail(),
         subject: faker.commerce.productName(),
-        timestamp: faker.date.recent(),
+        timestamp: `${faker.date.recent()}`,
         content: faker.lorem.paragraphs(),
         status: EMAIL_STATUS[random(0, EMAIL_STATUS.length - 1)],
     }));
@@ -34,11 +34,15 @@ exports.handler = async ({ httpMethod, body, queryStringParameters }) => {
         (resolve) => setTimeout(resolve, 2000)
     ))();
 
-    const id = queryStringParameters.id;
-    
-    if (httpMethod === 'GET' && isUndefined(queryStringParameters.id)) {
+    const isGet = httpMethod === 'GET';
+    const isPatch = httpMethod === 'PATCH';
+
+    if (isGet && isUndefined(queryStringParameters.id)) {
         return createResponse(emails.map(email => omit(email, 'content')));
     }
+
+    const data = isPatch ? JSON.parse(body) : {};
+    const id = isGet ? queryStringParameters.id : data.id;
 
     if (!id) {
         return createResponse({ error: 'Wrong email ID provided' }, 500);
@@ -50,8 +54,8 @@ exports.handler = async ({ httpMethod, body, queryStringParameters }) => {
         return createResponse({ error: 'Email not found' }, 404);
     }
 
-    if (httpMethod === 'PATCH') {
-        const { status } = JSON.parse(body);
+    if (isPatch) {
+        const { status } = data;
 
         if (!status || !EMAIL_STATUS.includes(status)) {
             return createResponse({ error: 'Wrong email status provided' }, 500);

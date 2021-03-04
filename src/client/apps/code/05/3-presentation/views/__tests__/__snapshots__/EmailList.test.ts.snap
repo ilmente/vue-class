@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailList.vue snapshot 1`] = `
+<div
+  class="email-list"
+>
+  <ul
+    class="email-list__list"
+  >
+    <li
+      class="email-list__item"
+    >
+      <router-link-stub
+        activeclass="has-background-white"
+        ariacurrentvalue="page"
+        class="email-list__link p-3"
+        data-qa-email-link=""
+        event="click"
+        tag="a"
+        to="[object Object]"
+      >
+        <strong
+          class="is-size-6 has-text-grey-dark"
+        >
+          Gorgeous Rubber Chicken
+        </strong>
+         
+        <span
+          class="tag is-primary is-pulled-right is-info is-light"
+        >
+          
+                    Read
+                
+        </span>
+         
+        <br />
+         
+        <a
+          class="is-size-7"
+        >
+          Nikki_Brekke@example.org
+        </a>
+         
+        <br />
+         
+        <span
+          class="is-size-7 has-text-grey"
+        >
+          yesterday at 8:30 PM
+        </span>
+      </router-link-stub>
+    </li>
+    <li
+      class="email-list__item"
+    >
+      <router-link-stub
+        activeclass="has-background-white"
+        ariacurrentvalue="page"
+        class="email-list__link p-3"
+        data-qa-email-link=""
+        event="click"
+        tag="a"
+        to="[object Object]"
+      >
+        <strong
+          class="is-size-6 has-text-grey-dark"
+        >
+          Handcrafted Rubber Salad
+        </strong>
+         
+        <span
+          class="tag is-primary is-pulled-right is-success is-light"
+        >
+          
+                    Unread
+                
+        </span>
+         
+        <br />
+         
+        <a
+          class="is-size-7"
+        >
+          Emmanuel_Lemke65@example.org
+        </a>
+         
+        <br />
+         
+        <span
+          class="is-size-7 has-text-grey"
+        >
+          yesterday at 12:38 PM
+        </span>
+      </router-link-stub>
+    </li>
+    <li
+      class="email-list__item"
+    >
+      <router-link-stub
+        activeclass="has-background-white"
+        ariacurrentvalue="page"
+        class="email-list__link p-3"
+        data-qa-email-link=""
+        event="click"
+        tag="a"
+        to="[object Object]"
+      >
+        <strong
+          class="is-size-6 has-text-grey-dark"
+        >
+          Small Soft Bike
+        </strong>
+         
+        <span
+          class="tag is-primary is-pulled-right is-danger is-light"
+        >
+          
+                    Spam
+                
+        </span>
+         
+        <br />
+         
+        <a
+          class="is-size-7"
+        >
+          Daphney_Ledner13@example.com
+        </a>
+         
+        <br />
+         
+        <span
+          class="is-size-7 has-text-grey"
+        >
+          yesterday at 8:14 PM
+        </span>
+      </router-link-stub>
+    </li>
+  </ul>
+   
+  <!---->
+</div>
+`;

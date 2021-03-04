@@ -54,6 +54,10 @@ yarn serve
 # run netlify lambda functions local server
 yarn serve:lambda
 
+# develop in one command
+# run `yarn build --watch`, `yarn serve` and `yarn serve:lambda` in parallel
+yarn dev
+
 # generate a static website
 yarn generate
 ```

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Vuex, { Store } from 'vuex';
+import Vuex, { Store, StoreOptions } from 'vuex';
 import merge from 'lodash/merge';
 import cloneDeep from 'lodash/cloneDeep';
 import { RootState } from './RootState';
@@ -9,7 +9,7 @@ import { MessagingModule } from './modules/MessagingModule';
 
 Vue.use(Vuex);
 
-export const store: Store<RootState> = new Vuex.Store({
+export const storeOptions: StoreOptions<RootState> = {
     strict: true,
 
     modules: {
@@ -17,7 +17,9 @@ export const store: Store<RootState> = new Vuex.Store({
         email: EmailModule,
         messaging: MessagingModule,
     },
-});
+}
+
+export const store: Store<RootState> = new Vuex.Store(cloneDeep(storeOptions));
 
 export function hydrateStore(partialState: Partial<RootState>): Store<RootState> {
     if (!partialState) {

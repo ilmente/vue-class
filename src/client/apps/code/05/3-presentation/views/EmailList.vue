@@ -6,6 +6,7 @@
                 v-for="(info, index) in list" 
                 :key="`email-info-${index}`">
                 <router-link 
+                    data-qa-email-link
                     class="email-list__link p-3"
                     active-class="has-background-white"
                     :to="{ name: RouteName.EMAIL, params: { id: info.id } }">

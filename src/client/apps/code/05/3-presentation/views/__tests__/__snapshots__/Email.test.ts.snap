@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Email.vue snapshot 1`] = `
+<div
+  class="email p-6"
+>
+  <article>
+    <div
+      class="dropdown is-right is-pulled-right"
+    >
+      <div
+        class="dropdown-trigger"
+      >
+        <button
+          class="button is-info is-light"
+          data-qa-status-dropdown-button=""
+        >
+          <span
+            data-qa-status-dropdown-value=""
+          >
+            Read
+          </span>
+        </button>
+      </div>
+       
+      <div
+        class="dropdown-menu"
+        id="dropdown-menu"
+        role="menu"
+      >
+        <div
+          class="dropdown-content"
+        >
+          <a
+            class="dropdown-item"
+            data-qa-status-dropdown-option=""
+          >
+            
+                Unread
+            
+          </a>
+          <a
+            class="dropdown-item is-active"
+            data-qa-status-dropdown-option=""
+          >
+            
+                Read
+            
+          </a>
+          <a
+            class="dropdown-item"
+            data-qa-status-dropdown-option=""
+          >
+            
+                Spam
+            
+          </a>
+        </div>
+      </div>
+    </div>
+     
+    <h1
+      class="title"
+    >
+      Gorgeous Rubber Chicken
+    </h1>
+     
+    <h2
+      class="subtitle"
+    >
+      <a>
+        Nikki_Brekke@example.org
+      </a>
+      , yesterday at 8:30 PM
+        
+    </h2>
+     
+    <hr />
+     
+    <div
+      class="is-size-4 content"
+    >
+      Content
+    </div>
+  </article>
+</div>
+`;

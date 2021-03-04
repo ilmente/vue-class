@@ -25,7 +25,10 @@
             "@helpers/*": ["src/client/helpers/*"],
             "@mixins/*": ["src/client/mixins/*"],
             "@decorators/*": ["src/client/decorators/*"],
-            "@typings/*": ["src/client/typings/*"]
+            "@typings/*": ["src/client/typings/*"],
+            "@05/*": ["src/client/apps/code/05/*"],
+            "@mock/*": ["src/mock/*"],
+            "@lambda/*": ["src/lambda/*"]
         }
     },
     "files": [
@@ -37,6 +40,7 @@
         "src/client/**/*.vue"
     ],
     "exclude": [
+        "**/*.snap",
         ".vscode",
         "node_modules",
         "docs",
