@@ -3,9 +3,9 @@
         <ul class="email-list__list" :class="isLoading && 'email-list__list--is-loading'">
             <li
                 class="email-list__item"
-                v-for="(info, index) in list" 
+                v-for="(info, index) in list"
                 :key="`email-info-${index}`">
-                <router-link 
+                <router-link
                     data-qa-email-link
                     class="email-list__link p-3"
                     active-class="has-background-white"
@@ -22,8 +22,8 @@
             </li>
         </ul>
         <div v-if="isLoading" class="p-5">
-            <progress 
-                class="progress is-small is-primary" 
+            <progress
+                class="progress is-small is-primary"
                 max="100">
             </progress>
         </div>

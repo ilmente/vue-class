@@ -16,7 +16,7 @@ exports[`Notification.vue snapshot 1`] = `
     <div
       class="notification__content"
     >
-      This is a notification
+      This is a nice notification
     </div>
   </div>
 </transition-stub>

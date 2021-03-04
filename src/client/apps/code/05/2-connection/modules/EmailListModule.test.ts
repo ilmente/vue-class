@@ -31,7 +31,7 @@ describe('getters', () => {
         );
 
         expect(filteredList).toHaveLength(2);
-    }) 
+    })
 
     test('filteredList simplified', () => {
         const state = {
@@ -41,7 +41,7 @@ describe('getters', () => {
         expect(state.list).toHaveLength(3);
         // @ts-ignore
         expect(EmailListModule.getters?.filteredList(state)).toHaveLength(2);
-    }) 
+    })
 });
 
 describe('actions', () => {

@@ -1,11 +1,11 @@
 <template>
     <div class="dropdown is-right" :class="isOpen && 'is-active'">
         <div class="dropdown-trigger">
-            <button 
+            <button
                 data-qa-status-dropdown-button
-                class="button" 
-                :class="getStatusModifier(status)" 
-                @click="onDropdownClick" 
+                class="button"
+                :class="getStatusModifier(status)"
+                @click="onDropdownClick"
                 :disabled="isUpdating">
                 <span v-if="isUpdating">Updating...</span>
                 <span v-else data-qa-status-dropdown-value>{{getStatusLabel(status)}}</span>
@@ -15,8 +15,8 @@
             <div class="dropdown-content">
                 <a
                     data-qa-status-dropdown-option
-                    class="dropdown-item" 
-                    v-for="(value, index) in statusList" 
+                    class="dropdown-item"
+                    v-for="(value, index) in statusList"
                     :key="`status-${index}`"
                     :class="isActive(value) && 'is-active'"
                     @click="onDropdownItemClick(value)">
@@ -43,7 +43,7 @@
         @ModelSync('value', 'change', { type: String, default: EmailStatus.UNREAD })
         status!: EmailStatus;
 
-        @Prop({ type: Boolean, default: false }) 
+        @Prop({ type: Boolean, default: false })
         isUpdating!: boolean;
 
         isOpen: boolean = false;
