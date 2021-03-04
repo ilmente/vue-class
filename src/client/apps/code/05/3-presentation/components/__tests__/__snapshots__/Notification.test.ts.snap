@@ -6,6 +6,7 @@ exports[`Notification.vue snapshot 1`] = `
 >
   <div
     class="notification is-success"
+    data-qa-notification=""
     style=""
   >
     <button

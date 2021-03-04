@@ -6,6 +6,7 @@
                 <label class="label">Username</label>
                 <div class="control">
                     <input 
+                        data-qa-username
                         class="input" 
                         type="text" 
                         placeholder="Any username here" 
@@ -17,6 +18,7 @@
                 <label class="label">Password</label>
                 <div class="control">
                     <input 
+                        data-qa-password
                         class="input" 
                         type="password" 
                         placeholder="Password works only if contained by the username" 
@@ -26,7 +28,7 @@
 
             <div class="field">
                 <p class="control">
-                    <button class="button is-success" @click="onClick">
+                    <button data-qa-submit class="button is-success" @click="onClick">
                         Login
                     </button>
                 </p>

@@ -1,6 +1,6 @@
 import { generateEmails } from '@lambda/emails';
 import omit from 'lodash/omit';
-import { Email, EmailInfo, EmailStatus } from '../client/apps/code/05/1-data/typings/Email';
+import { Email, EmailInfo, EmailStatus } from '@05/1-data/typings/Email';
 
 export const infoArray: EmailInfo[] = generateEmails(3).map((email: Email) => omit(email, 'content'));
 export const singleEmail: Email = generateEmails(1)[0];

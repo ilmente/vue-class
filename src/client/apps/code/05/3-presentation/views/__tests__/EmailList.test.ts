@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import EmailList from '../EmailList.vue';
-import { localVueWithRouter, router } from '@test/local-vue';
+import { localVueWithRouter, router } from '@mock/local-vue';
 import { staticInfoArray } from '@mock/email';
 import Vuex from 'vuex';
 

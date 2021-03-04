@@ -1,6 +1,10 @@
 <template>
     <transition name="fade">
-        <div v-show="isVisible" class="notification" :class="data.type && `is-${data.type}`">
+        <div 
+            data-qa-notification 
+            v-show="isVisible" 
+            class="notification" 
+            :class="data.type && `is-${data.type}`">
             <button class="delete" @click="onClick"></button>
             <div class="notification__content">
                 <slot>{{data.content}}</slot>

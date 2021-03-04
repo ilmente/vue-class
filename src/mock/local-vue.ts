@@ -2,10 +2,10 @@ import { jest } from '@jest/globals';
 import { createLocalVue } from '@vue/test-utils';
 import VueRouter from 'vue-router';
 import Vuex, { StoreOptions } from 'vuex';
-import { EmailListState } from '../client/apps/code/05/2-connection/modules/EmailListState';
-import { EmailState } from '../client/apps/code/05/2-connection/modules/EmailState';
-import { MessagingState } from '../client/apps/code/05/2-connection/modules/MessagingState';
-import { staticInfoArray, staticSingleEmail } from '@mock/email';
+import { EmailListState } from '@05/2-connection/modules/EmailListState';
+import { EmailState } from '@05/2-connection/modules/EmailState';
+import { MessagingState } from '@05/2-connection/modules/MessagingState';
+import { staticInfoArray, staticSingleEmail } from './email';
 import merge from 'lodash/merge';
 
 export const localVueWithRouter = createLocalVue();

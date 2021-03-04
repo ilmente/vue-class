@@ -34,7 +34,7 @@ test('SET_LIST mutation works', async () => {
     expect(store.state.emailList.list).toHaveLength(3);
 });
 
-test('loadAll actions works', async () => {
+test('loadAll action works', async () => {
     const localVue = createLocalVue();
     localVue.use(Vuex);
 
@@ -43,14 +43,22 @@ test('loadAll actions works', async () => {
     expect(store.state.emailList.list).toHaveLength(3);
 });
 
-test('updateEmailStatus actions works and send notification', async () => {
+test('updateEmailStatus action works and send notification', async () => {
     const localVue = createLocalVue();
     localVue.use(Vuex);
 
+    const spyIsLoading = jest.spyOn(store.state.messaging, 'isLoading', 'set');
+
     expect(store.state.email.current).toBeFalsy();
+    expect(spyIsLoading).toHaveBeenCalledTimes(0);
+
     await store.dispatch('email/updateEmailStatus', context.input.patchEmail);
+
     expect(store.state.email.current).toBeTruthy();
     expect(store.state.email.current?.status).toBe(context.input.patchEmail.status);
+    expect(spyIsLoading).toHaveBeenCalledTimes(4); // 4???
+
+    spyIsLoading.mockRestore();
 
     const notification = {
         content: `Email "${store.state.email.current?.subject}" updated`,

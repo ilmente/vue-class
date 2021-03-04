@@ -13,8 +13,11 @@ exports[`Email.vue snapshot 1`] = `
       >
         <button
           class="button is-info is-light"
+          data-qa-status-dropdown-button=""
         >
-          <span>
+          <span
+            data-qa-status-dropdown-value=""
+          >
             Read
           </span>
         </button>
@@ -30,6 +33,7 @@ exports[`Email.vue snapshot 1`] = `
         >
           <a
             class="dropdown-item"
+            data-qa-status-dropdown-option=""
           >
             
                 Unread
@@ -37,6 +41,7 @@ exports[`Email.vue snapshot 1`] = `
           </a>
           <a
             class="dropdown-item is-active"
+            data-qa-status-dropdown-option=""
           >
             
                 Read
@@ -44,6 +49,7 @@ exports[`Email.vue snapshot 1`] = `
           </a>
           <a
             class="dropdown-item"
+            data-qa-status-dropdown-option=""
           >
             
                 Spam

@@ -17,3 +17,5 @@ _*
 !__tests__
 !__snapshots__
 src/lambda/yarn.lock
+src/cypress/screenshots
+src/cypress/videos

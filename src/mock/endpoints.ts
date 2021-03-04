@@ -1,7 +1,7 @@
 import MockAdapter from 'axios-mock-adapter';
 import { netlify } from '@helpers/network-provider';
 import { infoArray, singleEmail } from '@mock/email';
-import { EmailStatus } from '../client/apps/code/05/1-data/typings/Email';
+import { EmailStatus } from '@05/1-data/typings/Email';
 
 const mock = new MockAdapter(netlify);
 

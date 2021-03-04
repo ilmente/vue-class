@@ -20,7 +20,9 @@
                                 </router-link>
                             </p>
                             <p class="control">
-                                <label class="button checkbox is-light is-danger">
+                                <label 
+                                    data-qa-spam-only-button 
+                                    class="button checkbox is-light is-danger">
                                     <input type="checkbox" v-model="isSpamOnly">
                                     Show only spam
                                 </label>

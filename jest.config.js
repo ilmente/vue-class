@@ -13,22 +13,10 @@ module.exports = {
         '.*\\.(vue)$': 'vue-jest',
     },
     moduleFileExtensions: ['js', 'ts', 'vue'],
-    // testEnvironment: 'jsdom',
-    // testEnvironmentOptions: {
-    //     resources: 'usable',
-    //     testUrl: 'http://localhost',
-    // },
-    // snapshotSerializers: ['jest-serializer-vue'],
-    // setupFilesAfterEnv: [
-    //     '<rootDir>/frontend/Test/Jest/Setup/Translation.ts',
-    //     '<rootDir>/frontend/Test/Jest/Setup/JestDomMatchers.ts',
-    // ],
-    testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
+    testRegex: '(/__tests__/.*|(\\.|/)test)\\.(jsx?|tsx?)$',
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
         prefix: '<rootDir>/',
     }),
-    // snapshotResolver: '<rootDir>/frontend/Test/Jest/Setup/SnapshotResolver.js',
-    // transformIgnorePatterns: [`<rootDir>/node_modules/(?!${esModules})`],
     globals: {
         'vue-jest': {
             babelConfig: true,
