@@ -15,7 +15,7 @@ describe('Email.vue', () => {
         store: context.store,
         propsData,
     });
-    
+
     beforeEach(() => {
         context = generateStoreContext();
     });

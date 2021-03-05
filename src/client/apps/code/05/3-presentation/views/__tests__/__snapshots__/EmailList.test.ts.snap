@@ -46,7 +46,7 @@ exports[`EmailList.vue snapshot 1`] = `
         <span
           class="is-size-7 has-text-grey"
         >
-          yesterday at 8:30 PM
+          last Wednesday at 8:30 PM
         </span>
       </router-link-stub>
     </li>
@@ -89,7 +89,7 @@ exports[`EmailList.vue snapshot 1`] = `
         <span
           class="is-size-7 has-text-grey"
         >
-          yesterday at 12:38 PM
+          last Wednesday at 12:38 PM
         </span>
       </router-link-stub>
     </li>
@@ -132,7 +132,7 @@ exports[`EmailList.vue snapshot 1`] = `
         <span
           class="is-size-7 has-text-grey"
         >
-          yesterday at 8:14 PM
+          last Wednesday at 8:14 PM
         </span>
       </router-link-stub>
     </li>

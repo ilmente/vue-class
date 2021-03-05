@@ -20,8 +20,8 @@ beforeEach(() => {
 
 test('emailList.list is initially empty', () => {
     const localVue = createLocalVue();
-    localVue.use(Vuex);    
-    
+    localVue.use(Vuex);
+
     expect(store.state.emailList.list).toHaveLength(0);
 });
 

@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 import { Notification as INotification, NotificationType } from '../../../1-data/typings/Notification';
 
 const notification: INotification = {
-    content: 'This is a notification',
+    content: 'This is a nice notification',
     type: NotificationType.Success,
 }
 
