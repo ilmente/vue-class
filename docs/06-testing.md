@@ -6,7 +6,7 @@ theme: default
 
 # Testing
 
-Jest integration and usage.
+Jest (*and Cypress*) integration and usage.
 
 ---
 
@@ -22,7 +22,7 @@ Jest integration and usage.
 
 # Why?
 
-- save your life (and your poject), *especially when you're in a hurry*
+- save your life (and your project), *especially when you're in a hurry*
 - check the code to make sure it works
 - help avoiding
     - code regressions
@@ -35,7 +35,7 @@ Jest integration and usage.
 
 ## Seriously...
 
-...tests save your life (and your poject), *especially when you're in a hurry*.
+...tests save your life (and your project), *especially when you're in a hurry*.
 
 **Don't skip/ignore them or underestimate their value.**
 
@@ -53,9 +53,11 @@ Jest integration and usage.
 - integration
 - end-to-end
 
+## 🔨 unit &rarr; 🏗 integration &rarr; 🏠 end-to-end
+
 ---
 
-## Unit tests
+## Unit tests 🔨
 
 Test individual units like functions or classes by supplying input and making sure the output is as expected.
 
@@ -64,7 +66,7 @@ Test individual units like functions or classes by supplying input and making su
 
 ---
 
-## Integration tests
+## Integration tests 🏗
 
 Test processes across several units to achieve their goals, including their side effects.
 
@@ -73,9 +75,9 @@ Test processes across several units to achieve their goals, including their side
 
 ---
 
-## End-to-end tests
+## End-to-end tests 🏠
 
-Test how scenarios function on the product itself, by controlling the browser or the website. These tests usually ignore the internal structure of the application entirety and look at them from the eyes of the user like on a black box.
+Test *scenarios* on the product itself. These tests usually ignore the internal structure of the application entirety and look at them from the eyes of the user like on a *black box*.
 
 >  The purpose of this test is to evaluate the system’s compliance with the business requirements and assess whether it is acceptable for delivery.
 [Software Testing Fundamentals](https://softwaretestingfundamentals.com)
@@ -89,7 +91,7 @@ Test how scenarios function on the product itself, by controlling the browser or
 
 ---
 
-## What about snapshot tests?
+## What about snapshot tests? 🏗 / 🏠
 
 > Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly.
 [Jest](https://jestjs.io)
@@ -109,12 +111,12 @@ Test how scenarios function on the product itself, by controlling the browser or
 # Jest (*&amp; Cypress*)
 
 ### Jest [[docs]](https://jestjs.io)
-- unit
-- integration
+- unit 🔨
+- integration 🏗
 
 ### Cypress [[docs]](https://https://www.cypress.io)
-- integration
-- end-to-end
+- integration 🏗
+- end-to-end 🏠
 
 ---
 
